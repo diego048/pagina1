@@ -1,0 +1,9 @@
+services:
+  1python:
+    image: diego048/python2
+    ports:
+      - "5000:5000"
+  vue1:
+    image: diego048/vue1
+    ports:
+      - "8080:8080" 

@@ -42,7 +42,7 @@
               v-scrolls
               class="flex d-flex align-self-stretch"
             >
-              <v-dialog scrollable v-model="card.show" v-if="activador">
+              <v-dialog scrollable v-model="card.show">
                 <template v-slot:activator="{ props }">
                   <v-card elevation="21" v-bind="props" style="width: 100%">
                     <v-img :src="card.src" height="200px" cover></v-img>
@@ -114,7 +114,7 @@
               class="flex d-flex align-self-stretch"
               v-scrolls
             >
-            <v-dialog scrollable v-model="card.show" v-if="activador">
+            <v-dialog scrollable v-model="card.show">
                 <template v-slot:activator="{ props }">
                   <v-card elevation="21" v-bind="props" style="width: 100%">
                     <v-img :src="card.src" height="200px" cover></v-img>
@@ -185,7 +185,7 @@
               v-scrolls
               class="flex d-flex align-self-stretch"
             >
-            <v-dialog scrollable v-model="card.show" v-if="activador">
+            <v-dialog scrollable v-model="card.show">
                 <template v-slot:activator="{ props }">
                   <v-card elevation="21" v-bind="props" style="width: 100%">
                     <v-img :src="card.src" height="200px" cover></v-img>

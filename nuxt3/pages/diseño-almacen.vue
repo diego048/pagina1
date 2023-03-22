@@ -515,7 +515,7 @@
       async log2(card) {
         const element = document.getElementById(card.tit)
         let result = await axios
-          .post("http://127.0.0.1:5000/login", {
+          .post("http://localhost:5000/login", {
             username: this.username,
             password: this.password,
           })

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="activador1">
+  <div v-if="false">
     <v-layout>        
       <v-navigation-drawer v-model="drawer" app>
         <v-img

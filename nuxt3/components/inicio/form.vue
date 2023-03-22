@@ -55,7 +55,7 @@
     },
     methods: {
       async form() {
-        let result = await axios.post("http://127.0.0.1:5000/correo", {
+        let result = await axios.post("http://localhost:5000/correo", {
           correo: this.correo,
           nombre: this.nombre,
           texto: this.texto,

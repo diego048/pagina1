@@ -269,7 +269,7 @@
   import ima13 from "../assets/imagenes/alm.jpg";
   
   export default {
-    beforeMount(){
+    mounted(){
       this.activador = true
     },
     setup(){

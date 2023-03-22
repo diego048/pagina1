@@ -234,7 +234,7 @@ export default defineComponent({
       }
   },
   beforeMount() {
-  this.activador1 = true
+  this.activador1 = true;
   this.links1 = localStorage.getItem("token"),
   window.addEventListener("resize", this.checkScreen);
   this.checkScreen();

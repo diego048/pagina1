@@ -1,5 +1,5 @@
 <template>
-  <div v-if="false">
+  <div>
     <v-layout>        
       <v-navigation-drawer v-model="drawer" app>
         <v-img

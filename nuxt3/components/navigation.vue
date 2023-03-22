@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="activador1">
     <v-layout>        
       <v-navigation-drawer v-model="drawer" app>
         <v-img
@@ -194,6 +194,7 @@ export default defineComponent({
   data() {
       return {
       drawer: false,
+      activador1: false,
       mobile: null,
       windowwith: null,
       state: null,
@@ -233,6 +234,7 @@ export default defineComponent({
       }
   },
   beforeMount() {
+  this.activador1 = true
   this.links1 = localStorage.getItem("token"),
   window.addEventListener("resize", this.checkScreen);
   this.checkScreen();

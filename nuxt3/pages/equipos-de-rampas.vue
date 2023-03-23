@@ -1,9 +1,7 @@
 <template>
     <div style="background-color: rgb(246, 246, 246)">
-      <div>
-        <!-- La cabecera con la info-->
         <v-container>
-          <v-row>
+            <v-row>
             <v-col cols="12" sm="4" md="4" class="align-self-center">
               <div class="m29">
                 <h1 style="color: rgb(255, 102, 26)">EQUIPOS DE RAMPA</h1>
@@ -22,56 +20,49 @@
               />
             </v-col>
           </v-row>
-  
-          <!--los cuadros de informacion-->
-          <br />
-          <br />
-          <div>
-            <v-row class="d-flex" height="100" v-if="activador">
-              <v-col
-                cols="6"
+        </v-container>
+        <br />
+        <br />
+      <v-container>
+        <v-row class="d-flex">
+            <v-col
+            cols="6"
                 :md="card.flex1"
                 :sm="card.flex"
                 v-for="card in cards"
                 :key="card.id"
                 align="center"
-                v-scrolls
                 class="flex d-flex align-self-stretch"
-              >
-                <v-dialog scrollable v-model="card.show" v-if="activador">
-                  <template v-slot:activator="{ props }">
-                    <v-card elevation="21" v-bind="props" style="width: 100%">
-                      <v-img :src="card.src" height="200px" v-if="!card.cover"></v-img>
-                      <v-img :src="card.src" height="200px" cover v-if="card.cover"></v-img>
-    
-                      <v-card-title
+            >
+                <v-card @click="showDialog(card)" elevation="21" align="center" style="width: 100%"  v-scrolls>
+                    <v-img :src="card.src" height="200px" v-if="!card.cover"></v-img>
+                    <v-img :src="card.src" height="200px" cover v-if="card.cover"></v-img>
+                    <v-card-title
                         class="text-pre-wrap"
                         style="word-break: break-word"
-                      >
+                    >
                         {{ card.title }}
-                      </v-card-title>
-    
-                      <v-card-subtitle> más info </v-card-subtitle>
-                    </v-card>
-                  </template>
-                    <v-card>
-                        <div class="d-flex justify-space-between">
-                        <v-card-title class="d-flex justify-end"
-                          >{{ card.title }}</v-card-title
+                    </v-card-title>
+
+                    <v-card-subtitle> más info </v-card-subtitle>
+                </v-card>                
+                <dibox v-show="card.show" @close="hideDialog(card)">
+                    <div class="d-flex justify-space-between">
+                      <v-card-title class="d-flex justify-end"
+                        >{{ card.title }}</v-card-title
+                      >
+                      <v-card-actions class="d-flex justify-start">
+                        <v-btn
+                          style="color: rgb(203, 50, 52)"
+                          variant="text"
+                          @click="hideDialog(card)"
                         >
-                        <v-card-actions class="d-flex justify-start">
-                          <v-btn
-                            style="color: rgb(203, 50, 52)"
-                            variant="text"
-                            @click="card.show = false"
-                          >
-                            <h1>X</h1>
-                          </v-btn>
-                        </v-card-actions>
-                        </div>
-                        <v-divider></v-divider>
-                        <v-card-text align="justify" class="text-pre-wrap">
-                          <v-row>
+                          <h1>X</h1>
+                        </v-btn>
+                      </v-card-actions>
+                      </div>
+                      <v-divider></v-divider>
+                      <v-row align="justify" class="text-pre-wrap">
                             <v-col cols="12" sm="6" md="6" class="align-self-center">
                               {{ card.info }}
                               <br />
@@ -109,24 +100,19 @@
                                 </v-carousel-item>
                               </v-carousel>
                             </v-col>
-                          </v-row>
-                        </v-card-text>
-                      </v-card>
-                </v-dialog>
-              </v-col>
-            </v-row>
-          </div>
-          <br />
-          <br />
-        </v-container>
-        <br />
-        <!--pie de pagina -->
-        <pie />
-      </div>
-    </div>
-  </template>
-  
-  <script>
+                      </v-row>
+                </dibox>
+            </v-col>           
+        </v-row>
+    </v-container>
+    <br />
+    <br />
+    <br />
+    <pie />
+  </div>
+</template>
+
+<script>
   import imagen1 from "../assets/imagenes/rampas.png";
   import imagen2 from "../assets/imagenes/rampas1.png";
   import imagen3 from "../assets/imagenes/rampas2.png";
@@ -134,7 +120,7 @@
   import imagen5 from "../assets/imagenes/rampas4.png";
   import imagen6 from "../assets/imagenes/rampas5.png";
   import imagen7 from "../assets/imagenes/rampas6.png";
-  export default {
+export default {
     setup(){
       useHead({
         title: "Equipos de Rampas",
@@ -186,14 +172,11 @@
       ],
       })
     },
-    beforeMount(){
-      this.activador = true
-    },
-    data() {
-      return {
-        activador: false,
-        p1: imagen1,
-        cards: [
+  data() {
+    return {
+      p1: imagen1,
+      scrollPosition: 0,
+      cards: [
           {
             id: 1,
             cover: false,
@@ -265,20 +248,36 @@
             show: false,
           },
         ],
-      };
+    }
+  },
+  methods: {
+    showDialog(card) {
+        this.scrollPosition = window.pageYOffset;
+        (card.show) = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
     },
-  };
-  </script>
-  
-  <style scoped>
-  .before-enter {
-    opacity: 0;
-    transform: translateX(100px);
-    transition: all 1s ease-out;
+    hideDialog(card) {
+        (card.show) = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    }
   }
-  .enter {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-  </style>
-  
+}
+</script>
+<style scoped>
+.before-enter {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease-out;
+}
+.enter {
+  opacity: 1;
+  transform: translateX(0px);
+}
+</style>

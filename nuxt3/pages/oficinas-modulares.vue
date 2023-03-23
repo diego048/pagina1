@@ -1,7 +1,6 @@
 <template>
     <div>
-      <!-- La cabecera con la info-->
-      <div cover id="background">
+        <div cover id="background">
         <v-container>
           <v-row>
             <v-col cols="12" sm="12" md="12">
@@ -17,9 +16,8 @@
           </v-row>
         </v-container>
       </div>
-      <v-container>
-        <!--los cuadros de informacion-->
-        <br />
+        <v-container>
+            <br />
         <v-row v-scrolls>
           <v-col
             cols="12"
@@ -113,20 +111,19 @@
         <h1 align="center" v-scrolls>FOTOS</h1>
         <p align="center" v-scrolls>Algunas de nuestras imagenes</p>
         <br />
-        <v-row>
-          <v-col
-            cols="6"
-            md="4"
-            sm="4"
-            v-for="card in cards"
-            :key="card.id"
-            align="center"
-            v-scrolls
-          >
-            <v-dialog v-model="card.show" width="80vw" v-if="activador">
-              <template v-slot:activator="{ props }">
-                <v-card elevation="21" v-bind="props">
-                  <v-img
+        </v-container>
+      <v-container>
+        <v-row class="d-flex">
+            <v-col
+                cols="6"
+                md="4"
+                sm="4"
+                v-for="card in cards"
+                :key="card.id"
+                align="center"
+            >
+                <v-card @click="showDialog(card)" elevation="21" align="center" style="width: 100%"  v-scrolls>
+                    <v-img
                     v-if="card.cover"
                     :src="card.src"
                     height="300px"
@@ -140,50 +137,48 @@
                     :lazy-src="card.src"
                   >
                   </v-img>
-                </v-card>
-              </template>
-              <v-container fluid class="accent pa-0 align-start">
-                <v-col>
-                  <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
-                    <div style="position: relative">
-                      <v-img
-                        style="height: 80vh"
-                        :src="card.src"
-                        :lazy-src="card.src"
-                      >
-                      </v-img>
-                      <v-card-actions
-                        style="position: absolute; top: 0; right: 0"
-                      >
-                        <v-btn
-                          variant="flat"
-                          color="error"
-                          @click="card.show = false"
-                          >X</v-btn
-                        >
-                      </v-card-actions>
-                    </div>
-                  </v-card>
-                </v-col>
-              </v-container>
-            </v-dialog>
-          </v-col>
+                </v-card>                
+                <dibox v-show="card.show" @close="hideDialog(card)">
+                    <v-container fluid class="accent pa-0 align-start">
+                        <v-col>
+                        <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
+                            <div style="position: relative">
+                            <v-img
+                                style="height: 100%; width: 60vw"
+                                :src="card.src"
+                                :lazy-src="card.src"
+                            >
+                            </v-img>
+                            <v-card-actions
+                                style="position: absolute; top: 0; right: 0"
+                            >
+                                <v-btn
+                                variant="flat"
+                                color="error"
+                                @click="hideDialog(card)"
+                                >X</v-btn
+                                >
+                            </v-card-actions>
+                            </div>
+                        </v-card>
+                        </v-col>
+                    </v-container>
+                </dibox>
+            </v-col> 
         </v-row>
-      </v-container>
-      <br />
-  
-      <!--pie de pagina -->
-      <pie />
-    </div>
-  </template>
-  
-  <script>
+    </v-container>
+    <br />
+    <pie />
+  </div>
+</template>
+
+<script>
   import imagen1 from "../assets/imagenes/oficina4.jpg";
   import imagen2 from "../assets/imagenes/oficina5.jpg";
   import imagen3 from "../assets/imagenes/oficina3.png";
   import ima1 from "../assets/imagenes/oficina2.png";
   import ima2 from "../assets/imagenes/oficina1.png";
-  export default {
+export default {
     setup(){
       useHead({
         title: "Oficinas Modulares",
@@ -235,52 +230,63 @@
       ],
       })
     },
-    beforeMount(){
-      this.activador = true
+  data() {
+    return {
+      scrollPosition: 0,
+      p1: ima1,
+    p2: ima2,
+    cards: [
+      { src: imagen1, cover: true },
+      { src: imagen2, cover: true },
+      { src: imagen3, cover: true },
+    ],
+    }
+  },
+  methods: {
+    showDialog(card) {
+        this.scrollPosition = window.pageYOffset;
+        (card.show) = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
     },
-    data() {
-      return {
-        activador: false,
-        p1: ima1,
-        p2: ima2,
-        dialog: null,
-        dialog1: null,
-        dialog2: null,
-        cards: [
-          { src: imagen1, cover: true },
-          { src: imagen2, cover: true },
-          { src: imagen3, cover: true },
-        ],
-      };
-    },
-  };
-  </script>
-  
-  <style scoped>
-  .contenedor {
-    position: relative;
-    text-align: center;
-    color: white;
-    height: 300px;
+    hideDialog(card) {
+        (card.show) = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    }
   }
-  .centrado {
-    position: absolute;
-    top: 50px;
-  }
-  #background {
-    background: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)),
-      url("../assets/imagenes/oficina3.png");
-    background-position: 50% 35%;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .before-enter {
-    opacity: 0;
-    transform: translateX(100px);
-    transition: all 1s ease-out;
-  }
-  .enter {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-  </style>
+}
+</script>
+<style scoped>
+.contenedor {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 300px;
+}
+.centrado {
+  position: absolute;
+  top: 50px;
+}
+#background {
+  background: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)),
+    url("../assets/imagenes/oficina3.png");
+  background-position: 50% 35%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.before-enter {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease-out;
+}
+.enter {
+  opacity: 1;
+  transform: translateX(0px);
+}
+</style>

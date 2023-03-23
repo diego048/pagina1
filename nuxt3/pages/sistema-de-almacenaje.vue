@@ -147,7 +147,7 @@
                           </div>
                           </v-col>
                           <v-col cols="12" sm="6" md="6">
-                            <v-img :src="card.src" style="height: 70vh"></v-img>
+                            <v-img :src="card.src" style="height: 100%"></v-img>
                           </v-col>
                         </v-row>
       
@@ -211,7 +211,7 @@
                           </div>
                           </v-col>
                           <v-col cols="12" sm="6" md="6">
-                            <v-img :src="card.src" style="height: 70vh"></v-img>
+                            <v-img :src="card.src" style="height: 100%"></v-img>
                           </v-col>
                         </v-row>
       

@@ -1,6 +1,5 @@
 <template>
     <div>
-      <div>
         <v-container>
           <v-row>
             <v-col cols="12" sm="12" md="4" class="align-self-center">
@@ -28,38 +27,31 @@
             </v-col>
           </v-row>
         </v-container>
-      </div>
       <v-container id="equipomh1">
-          <h1 align="center">EQUIPOS DE MH</h1>
-          <br />
-        <v-row class="d-flex" height="100">
+        <h1 align="center">EQUIPOS DE MH</h1>
+        <br />
+        <v-row class="d-flex">
             <v-col
               cols="6"
               md="4"
               sm="6"
               v-for="card in cards"
               :key="card.id"
-              align="center"
               class="flex d-flex align-self-stretch"
-              v-scrolls
             >
-              <v-dialog v-model="card.show" v-if="activador">
-                <template v-slot:activator="{ props }">
-                  <v-card elevation="21" v-bind="props" style="width: 100%">
+                <v-card @click="showDialog(card)" elevation="21" align="center" style="width: 100%"  v-scrolls>
                     <v-img :src="card.p3" height="200px"></v-img>
-  
                     <v-card-title
-                      class="text-pre-wrap"
-                      style="word-break: break-word"
+                        class="text-pre-wrap"
+                        style="word-break: break-word"
                     >
-                      {{ card.p1 }}
+                        {{ card.p1 }}
                     </v-card-title>
-  
+
                     <v-card-subtitle> más info </v-card-subtitle>
-                  </v-card>
-                </template>
-                <v-card>
-                      <div class="d-flex justify-space-between">
+                </v-card>                
+                <dibox v-show="card.show" @close="hideDialog(card)">
+                    <div class="d-flex justify-space-between">
                       <v-card-title class="d-flex justify-end"
                         >{{ card.p1 }}</v-card-title
                       >
@@ -67,15 +59,14 @@
                         <v-btn
                           style="color: rgb(203, 50, 52)"
                           variant="text"
-                          @click="card.show = false"
+                          @click="hideDialog(card)"
                         >
                           <h1>X</h1>
                         </v-btn>
                       </v-card-actions>
                       </div>
                       <v-divider></v-divider>
-                      <v-card-text align="justify" class="text-pre-wrap">
-                        <v-row>
+                      <v-row>
                           <v-col cols="12" sm="6" md="6" class="align-self-center">
                             {{ card.p2 }}
                             <br />
@@ -94,11 +85,9 @@
                             <v-img :src="card.p3" style="height: 70vh"></v-img>
                           </v-col>
                         </v-row>
-                      </v-card-text>
-                  </v-card>
-              </v-dialog>
-            </v-col>
-          </v-row>
+                </dibox>
+            </v-col>           
+        </v-row>
         <br />
         <v-row>
           <v-col>
@@ -117,24 +106,20 @@
             </v-card>
           </v-col>
         </v-row>
-      </v-container>
-      <br />
-      <pie />
-    </div>
-  </template>
-  <script>
-  import { defineComponent } from "vue";
+    </v-container>
+    <br />
+    <pie />
+  </div>
+</template>
+
+<script>
   import transver from "../assets/imagenes/transelevador.jpg";
   import montacarga from "../assets/imagenes/carro.jpeg";
   import order from "../assets/imagenes/order.jpg";
   import retractiles from "../assets/imagenes/retractil.jpeg";
   import trilateral from "../assets/imagenes/trilateral.jpg";
   import ima1 from "../assets/imagenes/cabecera.png";
-  
-  export default defineComponent({
-    beforeMount(){
-      this.activador = true
-    },
+export default {
     setup(){
       useHead({
         title: "Equipo MH",
@@ -186,14 +171,11 @@
       ],
       })
     },
-    data() {
-      return {
-        activador: false,
-        p1: ima1,
-        dialog: false,
-        tab: null,
-        tab1: null,
-        cards: [
+  data() {
+    return {
+      p1: ima1,
+      scrollPosition: 0,
+      cards: [
           {
             id: 1,
             p1: "Transpaleta",
@@ -244,27 +226,45 @@
             p4: transver,
           },
         ],
-      };
+    }
+  },
+  methods: {
+    showDialog(card) {
+        this.scrollPosition = window.pageYOffset;
+        (card.show) = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
     },
-  });
-  </script>
-  <style scoped>
-  .texto {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 410%;
+    hideDialog(card) {
+        (card.show) = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    }
   }
-  .contenedor {
-    position: relative;
-  }
-  .m2 {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    transform: translate(0%, -50%);
-  }
-  </style>
+}
+</script>
+<style scoped>
+.texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 410%;
+}
+.contenedor {
+  position: relative;
+}
+.m2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(0%, -50%);
+}
+</style>

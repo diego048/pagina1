@@ -93,9 +93,7 @@
           <v-col>
             <v-card elevation="0" outlined color="transparent">
               <br />
-              <v-card-title align="center">
-                <h2>ALQUILER DE EQUIPOS DE MATERIAL HANDLING</h2>
-              </v-card-title>
+                <h2 align="center">ALQUILER DE EQUIPOS DE MATERIAL HANDLING</h2>
               <v-card-text align="justify" class="text-body-1 font-weight-regular">
                 Ofrecemos la mayor variedad de equipos de alquiler, nuevos y
                 usados, garantizando el mayor nivel de eficiencia en sus

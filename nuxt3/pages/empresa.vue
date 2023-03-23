@@ -115,7 +115,7 @@
         </div>
         <br id="historia" />
         <br />
-        <div v-if="activador1" style="position: relative" id="emp1">
+        <div v-if="true" style="position: relative" id="emp1">
           <v-row style="position: static" v-scrolls>
             <v-col cols="12">
               <v-card align="center" style="position: static">
@@ -185,7 +185,7 @@
           </v-row>
         </div>
         <br />
-        <div v-if="!activador1">
+        <div v-if="false">
           <v-dialog scrollable v-model="show">
             <template v-slot:activator="{ props }">
               <v-card v-bind="props" elevation="0" outlined color="transparent" align="justify">

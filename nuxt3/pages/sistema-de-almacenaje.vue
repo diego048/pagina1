@@ -1,7 +1,5 @@
 <template>
-<v-app>
-    <div>
-      <div style="background-color: rgba(0, 0, 0, 0)">
+    <div >
         <v-container>
           <v-row>
             <v-col cols="12" md="4" sm="4" class="align-self-center">
@@ -27,39 +25,33 @@
             </v-col>
           </v-row>
         </v-container>
-        <v-container id="estanterias">
-          <h2 style="color: rgb(255, 102, 26)">SISTEMAS DE ALMACENAJE</h2>
-          <br />
-          <h2 align="center">Carga Paletizada y Gran Volumen</h2>
-          <br />
-          <v-row class="d-flex" height="100">
+      <v-container id="estanterias">
+        <h2 style="color: rgb(255, 102, 26)">SISTEMAS DE ALMACENAJE</h2>
+        <br />
+        <h2 align="center">Carga Paletizada y Gran Volumen</h2>
+        <br />
+        <v-row class="d-flex">
             <v-col
               cols="6"
               :md="card.flex1"
               :sm="card.flex"
               v-for="card in cards"
               :key="card.id"
-              align="center"
-              v-scrolls
               class="flex d-flex align-self-stretch"
             >
-              <v-dialog scrollable v-model="card.show">
-                <template v-slot:activator="{ props }">
-                  <v-card elevation="21" v-bind="props" style="width: 100%">
+                <v-card @click="showDialog(card)" elevation="21" align="center" style="width: 100%"  v-scrolls>
                     <v-img :src="card.src" height="200px" cover></v-img>
-  
                     <v-card-title
-                      class="text-pre-wrap"
-                      style="word-break: break-word"
+                        class="text-pre-wrap"
+                        style="word-break: break-word"
                     >
-                      {{ card.title }}
+                        {{ card.title }}
                     </v-card-title>
-  
+
                     <v-card-subtitle> más info </v-card-subtitle>
-                  </v-card>
-                </template>
-                  <v-card>
-                      <div class="d-flex justify-space-between">
+                </v-card>                
+                <dibox v-show="card.show" @close="hideDialog(card)">
+                    <div class="d-flex justify-space-between">
                       <v-card-title class="d-flex justify-end"
                         >{{ card.title }}</v-card-title
                       >
@@ -67,21 +59,20 @@
                         <v-btn
                           style="color: rgb(203, 50, 52)"
                           variant="text"
-                          @click="card.show = false"
+                          @click="hideDialog(card)"
                         >
                           <h1>X</h1>
                         </v-btn>
                       </v-card-actions>
                       </div>
                       <v-divider></v-divider>
-                      <v-card-text align="justify" class="text-pre-wrap">
-                        <v-row>
+                    <v-row>
                           <v-col cols="12" sm="6" md="6" class="align-self-center">
                             {{ card.info }}
                             <br />
                             <br />
                             <div align="center">
-                            <v-btn color="rgb(255, 102, 26)" class="link" to="/#formulario" 
+                            <v-btn color="rgb(255, 102, 26)" @click="hideDialog(card)" to="/#formulario" 
                               style="text-decoration: none; color: black"
                             >
                               <span style="white-space: normal">
@@ -94,44 +85,38 @@
                             <v-img :src="card.src" style="height: 70vh"></v-img>
                           </v-col>
                         </v-row>
-                      </v-card-text>
-                    </v-card>
-              </v-dialog>
+      
+                </dibox>
             </v-col>
-          </v-row>
-          <br />
-          <br />
-          <br />
-          <h2 align="center">Carga Media y Ligera</h2>
-          <br />
-          <v-row class="d-flex" height="100">
+            
+        </v-row>
+        <br />
+        <br />
+        <br />
+        <h2 align="center">Carga Media y Ligera</h2>
+        <br />
+        <v-row class="d-flex">
             <v-col
               cols="6"
               :md="card.flex1"
               :sm="card.flex"
               v-for="card in cards2"
               :key="card.id"
-              align="center"
               class="flex d-flex align-self-stretch"
-              v-scrolls
             >
-            <v-dialog scrollable v-model="card.show">
-                <template v-slot:activator="{ props }">
-                  <v-card elevation="21" v-bind="props" style="width: 100%">
+                <v-card @click="showDialog(card)" elevation="21" align="center" style="width: 100%" v-scrolls>
                     <v-img :src="card.src" height="200px" cover></v-img>
-  
                     <v-card-title
-                      class="text-pre-wrap"
-                      style="word-break: break-word"
+                        class="text-pre-wrap"
+                        style="word-break: break-word"
                     >
-                      {{ card.title }}
+                        {{ card.title }}
                     </v-card-title>
-  
+
                     <v-card-subtitle> más info </v-card-subtitle>
-                  </v-card>
-                </template>
-                  <v-card>
-                      <div class="d-flex justify-space-between">
+                </v-card>                
+                <dibox v-show="card.show" @close="hideDialog(card)">
+                    <div class="d-flex justify-space-between">
                       <v-card-title class="d-flex justify-end"
                         >{{ card.title }}</v-card-title
                       >
@@ -139,92 +124,20 @@
                         <v-btn
                           style="color: rgb(203, 50, 52)"
                           variant="text"
-                          @click="card.show = false"
+                          @click="hideDialog(card)"
                         >
                           <h1>X</h1>
                         </v-btn>
                       </v-card-actions>
                       </div>
                       <v-divider></v-divider>
-                      <v-card-text align="justify" class="text-pre-wrap">
-                        <v-row>
+                    <v-row>
                           <v-col cols="12" sm="6" md="6" class="align-self-center">
                             {{ card.info }}
                             <br />
                             <br />
                             <div align="center">
-                              <v-btn color="rgb(255, 102, 26)" to="/#formulario" 
-                                style="text-decoration: none; color: black"
-                              >
-                                <span style="white-space: normal">
-                                  MÁS INFORMACIÓN
-                                </span>
-                            </v-btn>
-                            </div>
-                          </v-col>
-                          <v-col cols="12" sm="6" md="6">
-                            <v-img :src="card.src" style="height: 70vh"></v-img>
-                          </v-col>
-                        </v-row>
-                      </v-card-text>
-                    </v-card>
-              </v-dialog>
-            </v-col>
-          </v-row>
-          <br />
-          <br />
-          <h2 align="center">Sistemas Integrados</h2>
-          <br />
-          <v-row class="d-flex" height="100">
-            <v-col
-              cols="6"
-              :md="card.flex1"
-              :sm="card.flex"
-              v-for="card in cards1"
-              :key="card.id"
-              align="center"
-              v-scrolls
-              class="flex d-flex align-self-stretch"
-            >
-            <v-dialog scrollable v-model="card.show">
-                <template v-slot:activator="{ props }">
-                  <v-card elevation="21" v-bind="props" style="width: 100%">
-                    <v-img :src="card.src" height="200px" cover></v-img>
-  
-                    <v-card-title
-                      class="text-pre-wrap"
-                      style="word-break: break-word"
-                    >
-                      {{ card.title }}
-                    </v-card-title>
-  
-                    <v-card-subtitle> más info </v-card-subtitle>
-                  </v-card>
-                </template>
-                  <v-card>
-                      <div class="d-flex justify-space-between">
-                      <v-card-title class="d-flex justify-end"
-                        >{{ card.title }}</v-card-title
-                      >
-                      <v-card-actions class="d-flex justify-start">
-                        <v-btn
-                          style="color: rgb(203, 50, 52)"
-                          variant="text"
-                          @click="card.show = false"
-                        >
-                          <h1>X</h1>
-                        </v-btn>
-                      </v-card-actions>
-                      </div>
-                      <v-divider></v-divider>
-                      <v-card-text align="justify" class="text-pre-wrap">
-                        <v-row>
-                          <v-col cols="12" sm="6" md="6" class="align-self-center">
-                            {{ card.info }}
-                            <br />
-                            <br />
-                            <div align="center">
-                            <v-btn color="rgb(255, 102, 26)" to="/#formulario" 
+                            <v-btn color="rgb(255, 102, 26)" @click="hideDialog(card)" to="/#formulario" 
                               style="text-decoration: none; color: black"
                             >
                               <span style="white-space: normal">
@@ -237,20 +150,81 @@
                             <v-img :src="card.src" style="height: 70vh"></v-img>
                           </v-col>
                         </v-row>
-                      </v-card-text>
-                  </v-card>
-              </v-dialog>
+      
+                </dibox>
             </v-col>
-          </v-row>
-        </v-container>
+            
+        </v-row>
         <br />
-        <pie />
-      </div>
-    </div>
-    </v-app>
-  </template>
-  <script>
-  //imagenes
+        <br />
+        <h2 align="center">Sistemas Integrados</h2>
+        <br />
+        <v-row class="d-flex">
+            <v-col
+              cols="6"
+              :md="card.flex1"
+              :sm="card.flex"
+              v-for="card in cards1"
+              :key="card.id"
+              class="flex d-flex align-self-stretch"
+            >
+                <v-card @click="showDialog(card)" elevation="21" align="center" style="width: 100%" v-scrolls>
+                    <v-img :src="card.src" height="200px" cover></v-img>
+                    <v-card-title
+                        class="text-pre-wrap"
+                        style="word-break: break-word"
+                    >
+                        {{ card.title }}
+                    </v-card-title>
+
+                    <v-card-subtitle> más info </v-card-subtitle>
+                </v-card>                
+                <dibox v-show="card.show" @close="hideDialog(card)">
+                    <div class="d-flex justify-space-between">
+                      <v-card-title class="d-flex justify-end"
+                        >{{ card.title }}</v-card-title
+                      >
+                      <v-card-actions class="d-flex justify-start">
+                        <v-btn
+                          style="color: rgb(203, 50, 52)"
+                          variant="text"
+                          @click="hideDialog(card)"
+                        >
+                          <h1>X</h1>
+                        </v-btn>
+                      </v-card-actions>
+                      </div>
+                      <v-divider></v-divider>
+                    <v-row>
+                          <v-col cols="12" sm="6" md="6" class="align-self-center">
+                            {{ card.info }}
+                            <br />
+                            <br />
+                            <div align="center">
+                            <v-btn color="rgb(255, 102, 26)" @click="hideDialog(card)" to="/#formulario" 
+                              style="text-decoration: none; color: black"
+                            >
+                              <span style="white-space: normal">
+                                MÁS INFORMACIÓN
+                              </span>
+                          </v-btn>
+                          </div>
+                          </v-col>
+                          <v-col cols="12" sm="6" md="6">
+                            <v-img :src="card.src" style="height: 70vh"></v-img>
+                          </v-col>
+                        </v-row>
+      
+                </dibox>
+            </v-col>           
+        </v-row>
+    </v-container>
+    <br />
+    <pie />
+  </div>
+</template>
+
+<script>
   import ima1 from "../assets/imagenes/almacen1.png";
   import ima1_op from "../assets/imagenes/imagen17-opti.jpg";
   import ima2 from "../assets/imagenes/almacen2.png";
@@ -269,11 +243,7 @@
   import ima11 from "../assets/imagenes/imagen10.jpg";
   import ima12 from "../assets/imagenes/almacen7.png";
   import ima13 from "../assets/imagenes/alm.jpg";
-  
-  export default {
-    mounted(){
-      this.activador = true
-    },
+export default {
     setup(){
       useHead({
         title: "Sistema de Almacenaje",
@@ -325,12 +295,11 @@
       ],
       })
     },
-    data() {
-      return {
-        activador: false,
-        dialog: false,
-        p1: ima13,
-        cards: [
+  data() {
+    return {
+      p1: ima13,
+      scrollPosition: 0,
+      cards: [
           {
             id: 1,
             title: "ESTANTERÍA CONVENCIONAL",
@@ -464,11 +433,29 @@
             show: false,
           },
         ],
-      };
+    }
+  },
+  methods: {
+    showDialog(card) {
+        this.scrollPosition = window.pageYOffset;
+        (card.show) = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
     },
-  };
-  </script>
-  <style scoped>
+    hideDialog(card) {
+        (card.show) = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    }
+  }
+}
+</script>
+<style scoped>
   .texto {
     position: absolute;
     top: 50%;
@@ -496,5 +483,4 @@
     opacity: 1;
     transform: translateX(0px);
   }
-  </style>
-  
+</style>

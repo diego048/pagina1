@@ -1,17 +1,16 @@
 <template>
-    <div>
-      <div class="contenedor">
-        <v-img
-          cover
-          :src="p1"
-          style="filter: brightness(25%)"
-        />
-        <div class="centrado">
-          <h1 align="center" color="white">LOSA SUPERPLANA</h1>
+    <div style="background-color: rgb(246, 246, 246)">
+        <div class="contenedor">
+            <v-img
+            cover
+            :src="p1"
+            style="filter: brightness(25%)"
+            />
+            <div class="centrado">
+            <h1 align="center" color="white">LOSA SUPERPLANA</h1>
+            </div>
         </div>
-      </div>
-      <!-- La cabecera con la info-->
-      <v-container>
+        <v-container>
         <!--los cuadros de informacion-->
         <br />
         <v-row v-scrolls>
@@ -88,27 +87,22 @@
           </v-col>
         </v-row>
       </v-container>
-  
       <br />
       <h1 align="center" v-scrolls>Fotos</h1>
       <p align="center" v-scrolls>Algunas imagenes de nuestros proyectos</p>
-      <!--Carrusel-->
       <v-container>
-        <v-row>
-          <v-col
-            cols="6"
-            md="4"
-            sm="4"
-            v-for="card in cards"
-            :key="card.id"
-            align="center"
-            v-scrolls
-            v-if="activador"
-          >
-            <v-dialog v-model="card.show" width="80vw">
-              <template v-slot:activator="{ props }">
-                <v-card elevation="21" v-bind="props">
-                  <v-img
+        <v-row class="d-flex">
+            <v-col
+                cols="6"
+                md="4"
+                sm="4"
+                v-for="card in cards"
+                :key="card.id"
+                align="center"
+                class="flex d-flex align-self-stretch"
+            >
+                <v-card @click="showDialog(card)" elevation="21" align="center" style="width: 100%"  v-scrolls>
+                    <v-img
                     v-if="card.cover"
                     :src="card.src"
                     height="300px"
@@ -122,35 +116,35 @@
                     :lazy-src="card.src"
                   >
                   </v-img>
-                </v-card>
-              </template>
-              <v-container fluid class="accent pa-0 align-start">
-                <v-col>
-                  <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
-                    <div style="position: relative">
-                      <v-img
-                        style="height: 80vh"
-                        :src="card.src"
-                        :lazy-src="card.src"
-                      >
-                      </v-img>
-                      <v-card-actions
-                        style="position: absolute; top: 0; right: 0"
-                      >
-                        <v-btn
-                          variant="flat"
-                          color="error"
-                          @click="card.show = false"
-                          >X</v-btn
-                        >
-                      </v-card-actions>
-                    </div>
-                  </v-card>
-                </v-col>
-              </v-container>
-            </v-dialog>
-          </v-col>
-          <v-col
+                </v-card>                
+                <dibox v-show="card.show" @close="hideDialog(card)">
+                    <v-container fluid class="accent pa-0 align-start">
+                        <v-col>
+                        <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
+                            <div style="position: relative">
+                            <v-img
+                                style="height: 100%; width: 60vw"
+                                :src="card.src"
+                                :lazy-src="card.src"
+                            >
+                            </v-img>
+                            <v-card-actions
+                                style="position: absolute; top: 0; right: 0"
+                            >
+                                <v-btn
+                                variant="flat"
+                                color="error"
+                                @click="hideDialog(card)"
+                                >X</v-btn
+                                >
+                            </v-card-actions>
+                            </div>
+                        </v-card>
+                        </v-col>
+                    </v-container>
+                </dibox>
+            </v-col>
+            <v-col
             cols="6"
             md="4"
             sm="4"
@@ -161,20 +155,19 @@
             height="300px"
           >
             <v-card elevation="21">
-              <video controls style="width: 100%; height: 300px">
+              <video controls style="width: 100%; height: 290px">
                 <source :src="card.src" type="video/mp4" />
               </video>
             </v-card>
-          </v-col>
+          </v-col>           
         </v-row>
-      </v-container>
-      <br />
-      <!--pie de pagina -->
-      <pie />
-    </div>
-  </template>
-  
-  <script>
+    </v-container>
+    <br />
+    <pie />
+  </div>
+</template>
+
+<script>
   import losa from "../assets/imagenes/losa4.png";
   import losa1 from "../assets/imagenes/losa1.png";
   import losa2 from "../assets/imagenes/losa2.png";
@@ -191,11 +184,7 @@
   import video1 from "../assets/imagenes/super2.mp4";
   import video2 from "../assets/imagenes/super3.mp4";
   import ima1 from "../assets/imagenes/imagen19.jpg";
-  
-  export default {
-    beforeMount(){
-      this.activador = true
-    },
+export default {
     setup(){
       useHead({
         title: "Losa Superplana",
@@ -247,14 +236,13 @@
       ],
       })
     },
-    data() {
-      return {
-        activador: false,
-        p1: ima1,
-        p3: losa,
-        p4: losa4,
-  
-        cards: [
+  data() {
+    return {
+      scrollPosition: 0,
+      p1: ima1,
+      p3: losa,
+      p4: losa4,  
+      cards: [
           {
             src: losa1,
             titulo: "Estantería Convencional",
@@ -319,32 +307,48 @@
             titulo: "Video de supervisión de losas superplanas 3",
           },
         ],
-      };
+    }
+  },
+  methods: {
+    showDialog(card) {
+        this.scrollPosition = window.pageYOffset;
+        (card.show) = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
     },
-  };
-  </script>
-  
-  <style scoped>
-  .contenedor {
-    position: relative;
-    text-align: center;
-    color: white;
-    height: 160px;
+    hideDialog(card) {
+        (card.show) = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    }
   }
-  .centrado {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .before-enter {
-    opacity: 0;
-    transform: translateX(100px);
-    transition: all 1s ease-out;
-  }
-  .enter {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-  </style>
-  
+}
+</script>
+<style scoped>
+.contenedor {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 160px;
+}
+.centrado {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.before-enter {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease-out;
+}
+.enter {
+  opacity: 1;
+  transform: translateX(0px);
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
     <div style="overflow-x:hidden">
       <div>
-        <video autoplay loop muted playsinline class="video" :poster="ima">
+        <video autoplay loop muted playsinline class="video">
           <source src="../assets/imagenes/logicorp1.mp4" type="video/webm" />
           <source src="../assets/imagenes/logicorp1.mp4" type="video/mp4" />
         </video>

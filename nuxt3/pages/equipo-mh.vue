@@ -265,4 +265,13 @@ export default {
   left: 0%;
   transform: translate(0%, -50%);
 }
+.before-enter {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease-out;
+}
+.enter {
+  opacity: 1;
+  transform: translateX(0px);
+}
 </style>

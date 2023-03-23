@@ -1,4 +1,5 @@
 <template>
+<v-app>
     <div>
       <div style="background-color: rgba(0, 0, 0, 0)">
         <v-container>
@@ -246,6 +247,7 @@
         <pie />
       </div>
     </div>
+    </v-app>
   </template>
   <script>
   //imagenes

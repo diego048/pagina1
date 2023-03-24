@@ -71,15 +71,18 @@
                   </v-card>
                 </div>
                 <div v-for="(card, index) in cards4" :key="index" v-if="!activador1">
-                  <v-dialog scrollable v-model="card.show">
-                      <template v-slot:activator="{ props }">
-                        <v-card v-bind="props" outlined elevation="0" color="transparent" align="justify">
+                  <v-card elevation="0" outlined color="transparent" align="justify" @click="showDialog(card)">
                           <span style="white-space: normal">
                             <h4 style="text-decoration: none; color: white"> {{card.nom}}</h4>
                           </span>
-                        </v-card>
-                      </template>
-                      <v-container>
+                  </v-card>
+                </div>
+              </v-col>
+            </v-row>
+          </v-container>
+        </div>
+        <div v-for="(card, index) in cards" :key="index" v-if="!activador1">
+          <dibox v-show="card.show" @close="hideDialog(card)">
                         <v-row>
                           <v-col cols="0" md="1"></v-col>
                           <v-col cols="12" md="10">
@@ -116,12 +119,7 @@
                             </v-card>
                           </v-col>
                         </v-row>
-                      </v-container>
-                    </v-dialog>
-                </div>
-              </v-col>
-            </v-row>
-          </v-container>
+          </dibox>
         </div>
         <!-- La cabecera con la info-->
         <div v-if="activador1">
@@ -700,7 +698,7 @@
       async log2(card) {
         const element = document.getElementById(card.tit)
         let result = await axios
-          .post("http://localhost:5000/login", {
+          .post("http://127.0.0.1:5000/login", {
             username: this.username,
             password: this.password,
           })
@@ -714,6 +712,12 @@
             this.password = "";
           });
         if (result.data.success == true) {
+          (card.show) = false;
+          document.body.style.position = 'static';
+          document.body.style.top = '';
+          document.body.style.width = '';
+          document.body.style.overflowY = '';
+          window.scrollTo(0, this.scrollPosition);
           this.username = "";
           this.password = "";
           this.state = true;
@@ -724,6 +728,22 @@
           return navigateTo(card.tit);
         }
       },
+      showDialog(card) {
+        this.scrollPosition = window.pageYOffset;
+        (card.show) = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
+    },
+    hideDialog(card) {
+        (card.show) = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    }
   },
   };
   </script>

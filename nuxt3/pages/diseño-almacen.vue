@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div style="overflow-x:hidden">
       <div>
         <!-- La cabecera con la info-->
-        <div style="position: relative">
+        <div position="relative">
           <video autoplay loop muted playsinline class="video">
             <source src="../assets/imagenes/proyect.mp4" type="video/webm" />
             <source src="../assets/imagenes/proyect.mp4" type="video/mp4" />
@@ -18,7 +18,7 @@
                     </p>
               </v-col>
               <v-col cols="0" sm="2" md="3"></v-col>
-              <v-col cols="12" sm="5" md="5" align="justify" class="h-auto">
+              <v-col cols="12" sm="5" md="5" align="justify">
                 <h1 align="center">Índice</h1>
                 <div v-if="activador1" >
                   <v-card outlined color="transparent" elevation="0">
@@ -79,19 +79,21 @@
                   </v-card>
                 </div>
                 <div v-for="(card, index) in cards" :key="index" v-if="!activador1">
-                  <v-dialog scrollable v-model="card.show">
-                      <template v-slot:activator="{ props }">
-                        <v-card v-bind="props" elevation="0" outlined color="transparent" align="justify">
+                  <v-card elevation="0" outlined color="transparent" align="justify" @click="showDialog(card)">
                           <span style="white-space: normal">
                             <h4 style="text-decoration: none; color: white"> {{card.nom}}</h4>
                           </span>
-                        </v-card>
-                      </template>
-                      <v-container>
-                        <v-row>
+                    </v-card>
+                </div>
+              </v-col>
+            </v-row>
+          </v-container>
+        </div>
+        <div v-for="(card, index) in cards" :key="index" v-if="!activador1">
+          <dibox v-show="card.show" @close="hideDialog(card)" >
+                    <v-row>
                           <v-col cols="0" md="1"></v-col>
-                          <v-col cols="12" md="10">
-                            <v-card>
+                          <v-col cols="12" md="10" style="width: 90vw; height: 100%">
                               <v-alert
                                   v-model="alert"
                                   border="start"
@@ -104,32 +106,23 @@
                                   <v-btn
                                     style="color: rgb(203, 50, 52)"
                                     variant="text"
-                                    @click="card.show = false"
+                                    @click="hideDialog(card)"
                                   >
                                     <h1>X</h1>
                                   </v-btn>
                                 </v-card-actions>
-                              <v-container>
                                   <v-row align="center">
-                                <v-divider></v-divider>
                                   <v-col cols="12" align="center" class="register">
-                                      <h2>Log in</h2>
+                                      <h2 style="color: black">Log in</h2>
                                       <br />
                                       <input type="text" placeholder="Username" v-model="username" />
                                       <input type="password" placeholder="password" v-model="password" />
                                       <v-btn v-on:click="log2(card)">log in</v-btn>
                                   </v-col>
                                   </v-row>
-                              </v-container>
-                            </v-card>
                           </v-col>
                         </v-row>
-                      </v-container>
-                    </v-dialog>
-                </div>
-              </v-col>
-            </v-row>
-          </v-container>
+          </dibox>
         </div>
         <v-container v-if="activador1">
           <!--los cuadros de informacion-->
@@ -515,7 +508,7 @@
       async log2(card) {
         const element = document.getElementById(card.tit)
         let result = await axios
-          .post("http://localhost:5000/login", {
+          .post("http://107.23.179.170:5000/login", {
             username: this.username,
             password: this.password,
           })
@@ -539,6 +532,22 @@
           return navigateTo(card.tit);
         }
       },
+      showDialog(card) {
+        this.scrollPosition = window.pageYOffset;
+        (card.show) = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
+    },
+    hideDialog(card) {
+        (card.show) = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    }
   },
   };
   </script>

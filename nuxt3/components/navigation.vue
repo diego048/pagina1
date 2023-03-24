@@ -76,25 +76,25 @@
           </v-btn>
       </div>
 
-        <div>
-          <v-btn class="link" :to="{ name: 'empresa' }" v-show="!mobile" open-on-hover>
-            EMPRESA
-        <v-menu open-on-hover activator="parent">
-          <v-list>
-              <v-list-item
-              active-color="white"
-              v-for="(item, index) in items3"
-              :key="index"
-              :value="index"  
-              class="link1" :to="item.name"
-              >
-                <v-list-item-title style="color: black">
-                    {{ item.title }}
-                </v-list-item-title>
-              </v-list-item>
-          </v-list>
-        </v-menu>
-        </v-btn>
+      <div>
+         <v-btn
+      id="menu-activator"
+      color="primary"
+    >
+      Sibling activator
+    </v-btn>
+
+    <v-menu activator="#menu-activator">
+      <v-list>
+        <v-list-item
+          v-for="(item, index) in items"
+          :key="index"
+          :value="index"
+        >
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
       </div>
 
         <v-btn class="link" :to="{ name: 'login' }" v-if="!state" v-show="!mobile">

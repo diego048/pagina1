@@ -76,99 +76,15 @@
           </v-btn>
       </div>
 
-        <div>
-        <v-menu open-on-hover>
-          <template v-slot:activator="{ props }">
-              <v-btn class="link" :to="{ name: 'empresa' }" v-bind="props" v-show="!mobile">
-                  EMPRESA
-              </v-btn>
-          </template>
-          <v-list>
-              <v-list-item
-              active-color="white"
-              v-for="(item, index) in items3"
-              :key="index"
-              :value="index"  
-              class="link1" :to="item.name"
-              >
-                <v-list-item-title style="color: black">
-                    {{ item.title }}
-                </v-list-item-title>
-              </v-list-item>
-          </v-list>
-        </v-menu>
-      </div>
-        <div>
-          <v-menu open-on-hover>
-          <template v-slot:activator="{ props }">
-            <v-btn v-bind="props" v-show="!mobile" class="link" :to="{ name: 'consultoria-de-proyectos' }">
-                CONSULTORÍA
-            </v-btn>
-          </template>
-          <v-list>
-            <v-list-item
-              v-for="(item, index) in items"
-              :key="index"
-              :value="index"
-              class="link1" :to="{ name: item.name }"
-            >
-              <v-list-item-title>
-                  {{ item.title }}
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-      </div>
-      <div>
-        <v-menu open-on-hover>
-          <template v-slot:activator="{ props }">
-              <v-btn align="center" v-bind="props" v-show="!mobile" class="link" :to="{ name: 'equipos' }">
-                EQUIPAMIENTO
-                <br />
-                WCW
-              </v-btn>
-          </template>
-          <v-list>
-            <v-list-item
-            v-for="(item, index) in items2"
-              :key="index"
-              :value="index"
-              class="link1" :to="{ name: item.name }"
-            >
-              <v-list-item-title>
-                  {{ item.title }}
-              </v-list-item-title>
-            </v-list-item>  
-          </v-list>
-        </v-menu>
-      </div>
+ 
+
+
 
         <v-btn class="link" :to="{ name: 'login' }" v-if="!state" v-show="!mobile">
             Login
         </v-btn>
 
-        <div>
-        <v-menu open-on-hover>
-          <template v-slot:activator="{ props }">
-              <v-btn align="center" v-bind="props" v-if="state" v-show="!mobile" class="link" :to="{ name: 'proyectos' }">
-                PROYECTOS
-              </v-btn>
-          </template>
-          <v-list>
-            <v-list-item
-              active-color="white"
-              v-for="(item, index) in items4"
-              :key="index"
-              :value="index"
-              class="link1" :to="item.name"
-            >
-              <v-list-item-title style="color: black">
-                  {{ item.title }}
-              </v-list-item-title>
-            </v-list-item>  
-          </v-list>
-        </v-menu>
-      </div>
+   
 
        <v-btn align="center" class="link" :to="{ name: 'logicorp-news' }"  v-if="state" v-show="!mobile">  
           Logicorp

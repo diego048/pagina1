@@ -9,15 +9,8 @@
           v-scrolls
           class="flex d-flex align-self-stretch"
         >
-          <v-dialog v-model="dialog" scrollable>
-            <template v-slot:activator="{ props }">
-              <v-card
-                elevation="21"
-                v-bind="props"
-                style="width: 100%"
-                align="center"
-              >
-                <v-img
+        <v-card elevation="21" style="width: 100%" align="center" @click="showDialog()">
+          <v-img
                   :src="p13"
                   height="200px"
                   cover
@@ -29,16 +22,16 @@
                   CD GLORIA
                 </v-card-title>
                 <v-card-subtitle> más info </v-card-subtitle>
-              </v-card>
-            </template>
-            <v-card>
-              <div class="d-flex justify-space-between">
+        </v-card>
+        </v-col>
+        <dibox v-show="dialog" @close="hideDialog()">
+          <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end">CD GLORIA</v-card-title>
                 <v-card-actions class="d-flex justify-start">
                   <v-btn
                     style="color: rgb(203, 50, 52)"
                     variant="text"
-                    @click="dialog = false"
+                    @click="hideDialog()"
                   >
                     <h1>X</h1>
                   </v-btn>
@@ -107,9 +100,8 @@
                   </v-carousel-item>
                 </v-carousel>
               </v-card-text>
-            </v-card>
-          </v-dialog>
-        </v-col>
+        </dibox>
+
         <v-col
           cols="6"
           sm="4"
@@ -117,15 +109,8 @@
           v-scrolls
           class="flex d-flex align-self-stretch"
         >
-          <v-dialog v-model="dialog0" scrollable>
-            <template v-slot:activator="{ props }">
-              <v-card
-                elevation="21"
-                v-bind="props"
-                style="width: 100%"
-                align="center"
-              >
-                <v-img
+        <v-card elevation="21" style="width: 100%" align="center" @click="showDialog1()">
+          <v-img
                   :src="p12"
                   height="200px"
                   cover
@@ -137,16 +122,17 @@
                   CD NESTLE
                 </v-card-title>
                 <v-card-subtitle> más info </v-card-subtitle>
-              </v-card>
-            </template>
-            <v-card>
+        </v-card>
+        </v-col>
+        <dibox v-show="dialog0" @close="hideDialog1()">
+          <v-card>
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end">CD NESTLE</v-card-title>
                 <v-card-actions class="d-flex justify-start">
                   <v-btn
                     style="color: rgb(203, 50, 52)"
                     variant="text"
-                    @click="dialog0 = false"
+                    @click="hideDialog1()"
                   >
                     <h1>X</h1>
                   </v-btn>
@@ -278,9 +264,7 @@
                 </v-carousel>
               </v-card-text>
             </v-card>
-          </v-dialog>
-        </v-col>
-  
+        </dibox>
         <!--SEGUNDO-->
         <v-col
           cols="6"
@@ -289,15 +273,8 @@
           v-scrolls
           class="flex d-flex align-self-stretch"
         >
-          <v-dialog v-model="dialog1" scrollable>
-            <template v-slot:activator="{ props }">
-              <v-card
-                elevation="21"
-                v-bind="props"
-                style="width: 100%"
-                align="center"
-              >
-                <v-img
+        <v-card elevation="21" style="width: 100%" align="center" @click="showDialog2()">
+          <v-img
                   :src="p20"
                   height="200px"
                   cover
@@ -309,16 +286,17 @@
                   MEDIFARMA
                 </v-card-title>
                 <v-card-subtitle> más info </v-card-subtitle>
-              </v-card>
-            </template>
-            <v-card>
+        </v-card>
+        </v-col>
+        <dibox v-show="dialog1" @close="hideDialog2()">
+          <v-card>
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end">Medifarma</v-card-title>
                 <v-card-actions class="d-flex justify-start">
                   <v-btn
                     style="color: rgb(203, 50, 52)"
                     variant="text"
-                    @click="dialog1 = false"
+                    @click="hideDialog2()"
                   >
                     <h1>X</h1>
                   </v-btn>
@@ -403,8 +381,7 @@
                 </v-carousel>
               </v-card-text>
             </v-card>
-          </v-dialog>
-        </v-col>
+        </dibox>
   
         <!--TERCERO-->
         <v-col
@@ -414,15 +391,8 @@
           v-scrolls
           class="flex d-flex align-self-stretch"
         >
-          <v-dialog v-model="dialog2" scrollable>
-            <template v-slot:activator="{ props }">
-              <v-card
-                elevation="21"
-                v-bind="props"
-                style="width: 100%"
-                align="center"
-              >
-                <v-img
+        <v-card elevation="21" style="width: 100%" align="center" @click="showDialog3()">
+          <v-img
                   :src="p26"
                   height="200px"
                   cover
@@ -434,9 +404,10 @@
                   SUPERMERCADOS PERUANOS
                 </v-card-title>
                 <v-card-subtitle> más info </v-card-subtitle>
-              </v-card>
-            </template>
-            <v-card>
+        </v-card>
+        </v-col>
+        <dibox v-show="dialog2" @close="hideDialog3()">
+          <v-card>
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end"
                   >SUPERMERCADOS PERUANOS</v-card-title
@@ -445,7 +416,7 @@
                   <v-btn
                     style="color: rgb(203, 50, 52)"
                     variant="text"
-                    @click="dialog2 = false"
+                    @click="hideDialog3()"
                   >
                     <h1>X</h1>
                   </v-btn>
@@ -498,8 +469,7 @@
                 </v-carousel>
               </v-card-text>
             </v-card>
-          </v-dialog>
-        </v-col>
+        </dibox>
         <!--CUARTO-->
         <v-col
           cols="6"
@@ -508,15 +478,8 @@
           v-scrolls
           class="flex d-flex align-self-stretch"
         >
-          <v-dialog v-model="dialog3" scrollable>
-            <template v-slot:activator="{ props }">
-              <v-card
-                elevation="21"
-                v-bind="props"
-                style="width: 100%"
-                align="center"
-              >
-                <v-img
+        <v-card elevation="21" style="width: 100%" align="center" @click="showDialog4()">
+          <v-img
                   :src="p28"
                   height="200px"
                   cover
@@ -528,9 +491,10 @@
                   TIENDAS EFE
                 </v-card-title>
                 <v-card-subtitle> más info </v-card-subtitle>
-              </v-card>
-            </template>
-            <v-card>
+        </v-card>
+        </v-col>
+        <dibox v-show="dialog3" @close="hideDialog4()">
+          <v-card>
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end"
                   >TIENDAS EFE</v-card-title
@@ -539,7 +503,7 @@
                   <v-btn
                     style="color: rgb(203, 50, 52)"
                     variant="text"
-                    @click="dialog3 = false"
+                    @click="hideDialog4()"
                   >
                     <h1>X</h1>
                   </v-btn>
@@ -569,9 +533,8 @@
                 </v-carousel>
               </v-card-text>
             </v-card>
-          </v-dialog>
-        </v-col>
-  
+        </dibox>
+        
         <!--CUARTO-->
         <v-col
           cols="6"
@@ -580,15 +543,8 @@
           v-scrolls
           class="flex d-flex align-self-stretch"
         >
-          <v-dialog v-model="dialog4" scrollable>
-            <template v-slot:activator="{ props }">
-              <v-card
-                elevation="21"
-                v-bind="props"
-                style="width: 100%"
-                align="center"
-              >
-                <v-img
+        <v-card elevation="21" style="width: 100%" align="center" @click="showDialog5()">
+          <v-img
                   :src="p30"
                   height="200px"
                   cover
@@ -600,16 +556,17 @@
                   RIPLEY
                 </v-card-title>
                 <v-card-subtitle> más info </v-card-subtitle>
-              </v-card>
-            </template>
-            <v-card>
+        </v-card>
+        </v-col>
+        <dibox v-show="dialog4" @close="hideDialog5()">
+          <v-card>
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end">RIPLEY</v-card-title>
                 <v-card-actions class="d-flex justify-start">
                   <v-btn
                     style="color: rgb(203, 50, 52)"
                     variant="text"
-                    @click="dialog4 = false"
+                    @click="hideDialog5()"
                   >
                     <h1>X</h1>
                   </v-btn>
@@ -644,8 +601,7 @@
                 </v-carousel>
               </v-card-text>
             </v-card>
-          </v-dialog>
-        </v-col>
+        </dibox>
   
         <!--QUINTO-->
         <v-col
@@ -655,15 +611,8 @@
           v-scrolls
           class="flex d-flex align-self-stretch"
         >
-          <v-dialog v-model="dialog5" scrollable>
-            <template v-slot:activator="{ props }">
-              <v-card
-                elevation="21"
-                v-bind="props"
-                style="width: 100%"
-                align="center"
-              >
-                <v-img
+        <v-card elevation="21" style="width: 100%" align="center" @click="showDialog6()">
+          <v-img
                   :src="p44"
                   height="200px"
                   cover
@@ -675,9 +624,10 @@
                   MINERA PODEROSA
                 </v-card-title>
                 <v-card-subtitle> más info </v-card-subtitle>
-              </v-card>
-            </template>
-            <v-card>
+        </v-card>
+        </v-col>
+        <dibox v-show="dialog5" @close="hideDialog6()">
+          <v-card>
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end"
                   >MINERA PODEROSA</v-card-title
@@ -686,7 +636,7 @@
                   <v-btn
                     style="color: rgb(203, 50, 52)"
                     variant="text"
-                    @click="dialog5 = false"
+                    @click="hideDialog6()"
                   >
                     <h1>X</h1>
                   </v-btn>
@@ -910,8 +860,7 @@
                 </v-carousel>
               </v-card-text>
             </v-card>
-          </v-dialog>
-        </v-col>
+        </dibox>
 
         <v-col 
           cols="6"
@@ -1036,8 +985,123 @@
         dialog3: false,
         dialog4: false,
         dialog5: false,
+        scrollPosition: 0,
       };
     },
+    methods: {
+      showDialog() {
+        this.scrollPosition = window.pageYOffset;
+        this.dialog = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
+    },
+    showDialog1() {
+        this.scrollPosition = window.pageYOffset;
+        this.dialog0 = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
+    },
+    showDialog2() {
+        this.scrollPosition = window.pageYOffset;
+        this.dialog1 = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
+    },
+    showDialog3() {
+        this.scrollPosition = window.pageYOffset;
+        this.dialog2 = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
+    },
+    showDialog4() {
+        this.scrollPosition = window.pageYOffset;
+        this.dialog3 = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
+    },
+    showDialog5() {
+        this.scrollPosition = window.pageYOffset;
+        this.dialog4 = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
+    },
+    showDialog6() {
+        this.scrollPosition = window.pageYOffset;
+        this.dialog5 = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
+    },
+    hideDialog() {
+        this.dialog = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    },
+    hideDialog1() {
+        this.dialog0 = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    },
+    hideDialog2() {
+        this.dialog1 = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    },
+    hideDialog3() {
+        this.dialog2 = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    },
+    hideDialog4() {
+        this.dialog3 = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    },
+    hideDialog5() {
+        this.dialog4 = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    },
+    hideDialog6() {
+        this.dialog5 = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    },
+    }
   });
   </script>
   <style scoped>

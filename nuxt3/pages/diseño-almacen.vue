@@ -479,6 +479,7 @@
     },
     data() {
       return {
+        scrollPosition: 0,
         activador1: false,
         username: "",
         password: "",

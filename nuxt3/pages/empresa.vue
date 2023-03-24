@@ -115,7 +115,7 @@
         </div>
         <br id="historia" />
         <br />
-        <div v-if="true" style="position: relative" id="emp1">
+        <div v-if="activador1" style="position: relative" id="emp1">
           <v-row style="position: static" v-scrolls>
             <v-col cols="12">
               <v-card align="center" style="position: static">
@@ -185,20 +185,16 @@
           </v-row>
         </div>
         <br />
-        <div v-if="false">
-          <v-dialog scrollable v-model="show">
-            <template v-slot:activator="{ props }">
-              <v-card v-bind="props" elevation="0" outlined color="transparent" align="justify">
+        <div v-if="!activador1">
+          <v-card @click="showDialog()" elevation="0" outlined color="transparent" align="justify">
                 <span style="white-space: normal">
                   <h2 align="center" style="text-decoration: none; color: white"> Para ver la historia registrate</h2>
                 </span>
-              </v-card>
-            </template>
-            <v-container>
-              <v-row>
+          </v-card>
+          <dibox v-show="show1" @close="hideDialog()">
+              <v-row style="width: 80vw">
                 <v-col cols="0" md="1"></v-col>
                 <v-col cols="12" md="10">
-                  <v-card>
                     <v-alert
                       v-model="alert"
                       border="start"
@@ -211,14 +207,13 @@
                       <v-btn
                         style="color: rgb(203, 50, 52)"
                         variant="text"
-                        @click="show = false"
+                        @click="hideDialog()"
                       >
                         <h1>X</h1>
                       </v-btn>
                     </v-card-actions>
                     <v-container>
                       <v-row align="center">
-                        <v-divider></v-divider>
                         <v-col cols="12" align="center" class="register">
                           <h2>Log in</h2>
                           <br />
@@ -228,11 +223,9 @@
                         </v-col>
                       </v-row>
                     </v-container>
-                  </v-card>
                 </v-col>
               </v-row>
-            </v-container>
-          </v-dialog>
+          </dibox>
         </div>
       </v-container>
     </div>
@@ -302,19 +295,20 @@
     },
     data() {
       return {
-        show: false,
+        show1: false,
         activador1: false,
         username: "",
         password: "",
         state: false,
         alert: false,
+        scrollPosition: 0,
       };
     },
     components: {},
     methods: {
       async log2() {
         let result = await axios
-          .post("http://localhost:5000/login", {
+          .post("http://127.0.0.1:5000/login", {
             username: this.username,
             password: this.password,
           })
@@ -338,6 +332,22 @@
           return navigateTo("#emp1");
         }
       },
+      showDialog() {
+        this.scrollPosition = window.pageYOffset;
+        this.show1 = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
+    },
+    hideDialog() {
+        this.show1 = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    }
     },
   });
   </script>

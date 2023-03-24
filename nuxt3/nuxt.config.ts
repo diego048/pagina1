@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    css:['vuetify/lib/styles/main.sass', '@mdi/font/css/materialdesignicons.min.css'],
+    css:['vuetify/lib/styles/main.sass', '@mdi/font/css/materialdesignicons.min.css','~/node_modules/vuetify/dist/vuetify.min.css'],
     build: {
         transpile: ['vuetify']
     },

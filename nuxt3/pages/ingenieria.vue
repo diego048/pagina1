@@ -642,6 +642,7 @@
     },
     data() {
       return {
+        scrollPosition: 0,
         show1: false,
         show2: false,
         activador1: false,

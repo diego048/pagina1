@@ -91,9 +91,7 @@
         log out
       </v-btn>
         <div class="text-center">
-    <v-menu
-      transition="scale-transition"
-      origin="center center"
+    <v-expand-transition
     >
       <template v-slot:activator="{ props }">
         <v-btn
@@ -113,7 +111,7 @@
           <v-list-item-title v-text="'Item ' + n"></v-list-item-title>
         </v-list-item>
       </v-list>
-    </v-menu>
+    </v-expand-transition>
   </div>
       </v-app-bar>
       <v-main>

@@ -90,29 +90,31 @@
       <v-btn v-if="state" @click="logout" class="link" v-show="!mobile">
         log out
       </v-btn>
-        <div class="text-center">
-    <v-expand-transition
+        <div>
+         <div class="text-center">
+    <v-menu
+      open-on-hover
     >
       <template v-slot:activator="{ props }">
         <v-btn
-          dark
           color="primary"
           v-bind="props"
         >
-          Scale Transition
+          Dropdown
         </v-btn>
       </template>
+
       <v-list>
         <v-list-item
-          v-for="n in 5"
-          :key="n"
-          @click="() => {}"
+          v-for="(item, index) in items"
+          :key="index"
         >
-          <v-list-item-title v-text="'Item ' + n"></v-list-item-title>
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
-    </v-expand-transition>
+    </v-menu>
   </div>
+        </div>
       </v-app-bar>
       <v-main>
       </v-main>

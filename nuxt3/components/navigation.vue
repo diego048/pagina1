@@ -96,11 +96,72 @@
         </v-menu>
         </v-btn>
       </div>
+      
+      <div  v-if="!mobile1">
+          <v-btn open-on-hover v-show="!mobile" class="link" :to="{ name: 'consultoria-de-proyectos' }">
+            CONSULTORÍA
+          <v-menu open-on-hover activator="parent">
+          <v-list>
+            <v-list-item
+              v-for="(item, index) in items"
+              :key="index"
+              :value="index"
+              class="link1" :to="{ name: item.name }"
+            >
+              <v-list-item-title>
+                  {{ item.title }}
+              </v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </v-btn>
+      </div>
+      <div v-if="!mobile1">
+        <v-btn align="center" open-on-hover v-show="!mobile" class="link" :to="{ name: 'equipos' }">
+                EQUIPAMIENTO
+                <br />
+                WCW
+        <v-menu open-on-hover activator="parent">
+          <v-list>
+            <v-list-item
+            v-for="(item, index) in items2"
+              :key="index"
+              :value="index"
+              class="link1" :to="{ name: item.name }"
+            >
+              <v-list-item-title>
+                  {{ item.title }}
+              </v-list-item-title>
+            </v-list-item>  
+          </v-list>
+        </v-menu>
+      </v-btn>
+      </div>
 
         <v-btn class="link" :to="{ name: 'login' }" v-if="!state" v-show="!mobile">
             Login
         </v-btn>
-
+        
+        <div v-if="!mobile1">
+          <v-btn align="center" open-on-hover v-if="state" v-show="!mobile" class="link" :to="{ name: 'proyectos' }">
+                PROYECTOS
+        <v-menu open-on-hover activator="parent">
+          <v-list>
+            <v-list-item
+              active-color="white"
+              v-for="(item, index) in items4"
+              :key="index"
+              :value="index"
+              class="link1" :to="item.name"
+            >
+              <v-list-item-title style="color: black">
+                  {{ item.title }}
+              </v-list-item-title>
+            </v-list-item>  
+          </v-list>
+        </v-menu>
+        </v-btn>
+      </div>
 
        <v-btn align="center" class="link" :to="{ name: 'logicorp-news' }"  v-if="state" v-show="!mobile">  
           Logicorp

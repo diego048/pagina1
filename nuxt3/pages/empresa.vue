@@ -6,7 +6,7 @@
           <source src="../assets/imagenes/logicorp1.mp4" type="video/mp4" />
         </video>
       </div>
-      <v-container class="clase1">
+      <v-container class="static1" ref="myElement">
         <br />
         <div style="position: relative">
           <v-row style="color: white">
@@ -344,6 +344,8 @@
       showDialog() {
         this.scrollPosition = window.pageYOffset;
         this.show1 = true;
+        this.$refs.myElement.classList.remove('my-relative-class');
+        this.$refs.myElement.classList.add('my-fixed-class');
         document.body.style.top = `-${this.scrollPosition}px`;
         document.body.style.width = '100%';
         document.body.style.overflowY = 'hidden';
@@ -351,6 +353,8 @@
     hideDialog() {
         this.show1 = false;
         document.body.style.position = 'static';
+        this.$refs.myElement.classList.remove('my-fixed-class');
+        this.$refs.myElement.classList.add('my-relative-class');
         document.body.style.top = '';
         document.body.style.width = '';
         document.body.style.overflowY = '';
@@ -406,4 +410,10 @@
     font-weight: 300;
     text-transform: uppercase;
   }
+  .static1 {
+  position: static;
+}
+.fixe1 {
+    position: fixed;
+}
   </style>

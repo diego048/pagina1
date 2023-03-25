@@ -61,28 +61,6 @@
           </NuxtLink>
         </v-col>
       </v-row>
-    </v-container>
-            <v-container>
-            <v-row>
-                <v-col>
-                    <v-card @click="showModal = true">
-                        sdfsdf
-                    </v-card>
-                    <transition name="fade" appear>
-                        <div class="modal-overlay" v-if="showModal" @click="showModal = false"></div>
-                    </transition>
-                    <transition name="slide" appear>
-                        <div class="modal" v-if="showModal">
-                            <h1>Lorem Ipsum</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem provident explicabo accusamus laudantium voluptatum nobis sed nesciunt neque possimus molestiae?</p>
-                            <button class="button" @click="showModal = false">
-                                Close Modal
-                            </button>
-                        </div>
-                    </transition>
-                </v-col>
-            </v-row>
-        </v-container>
     <br />
     <!--pie de pagina -->
     <pie />

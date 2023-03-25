@@ -191,7 +191,10 @@
                   <h2 align="center" style="text-decoration: none; color: white"> Más info</h2>
                 </span>
           </v-card>
-          <dibox v-show="show1" @close="hideDialog()">
+        </div>
+      </v-container>
+      <div v-if="!activador1">
+                <dibox v-show="show1" @close="hideDialog()">
               <v-row style="width: 80vw">
                 <v-col cols="0" md="1"></v-col>
                 <v-col cols="12" md="10">
@@ -226,8 +229,7 @@
                 </v-col>
               </v-row>
           </dibox>
-        </div>
-      </v-container>
+      </div>
     </div>
   </template>
   <script>
@@ -370,7 +372,7 @@
     object-fit: cover;
     height: 100vh;
     width: 100vw;
-    display: block;
+    z-index: -1;
   }
   .before-enter {
     opacity: 0;

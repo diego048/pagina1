@@ -75,6 +75,27 @@
             Inicio
           </v-btn>
       </div>
+      
+              <div v-if="!mobile1">
+          <v-btn class="link" :to="{ name: 'empresa' }" v-show="!mobile" open-on-hover>
+            EMPRESA
+        <v-menu open-on-hover activator="parent">
+          <v-list>
+              <v-list-item
+              active-color="white"
+              v-for="(item, index) in items3"
+              :key="index"
+              :value="index"  
+              class="link1" :to="item.name"
+              >
+                <v-list-item-title style="color: black">
+                    {{ item.title }}
+                </v-list-item-title>
+              </v-list-item>
+          </v-list>
+        </v-menu>
+        </v-btn>
+      </div>
 
         <v-btn class="link" :to="{ name: 'login' }" v-if="!state" v-show="!mobile">
             Login
@@ -90,31 +111,7 @@
       <v-btn v-if="state" @click="logout" class="link" v-show="!mobile">
         log out
       </v-btn>
-        <div>
-         <div class="text-center">
-    <v-menu
-      open-on-hover
-    >
-      <template v-slot:activator="{ props }">
-        <v-btn
-          color="primary"
-          v-bind="props"
-        >
-          Dropdown
-        </v-btn>
-      </template>
-
-      <v-list>
-        <v-list-item
-          v-for="(item, index) in items"
-          :key="index"
-        >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
-  </div>
-        </div>
+        
       </v-app-bar>
       <v-main>
       </v-main>
@@ -128,7 +125,7 @@ import ima2 from "../assets/imagenes/logicorpweb1.png";
 export default defineComponent({
   data() {
       return {
-      expand: false,
+      mobile1: false,
       drawer: false,
       mobile: null,
       windowwith: null,
@@ -183,6 +180,7 @@ methods: {
     this.windowwith = window.innerWidth;
     if (this.windowwith <= 1005) {
       this.mobile = true;
+      this.mobile1 = true
       return;
     }
     this.drawer = false;

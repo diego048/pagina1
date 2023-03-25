@@ -188,7 +188,7 @@
         <div v-if="!activador1">
           <v-card @click="showDialog()" elevation="0" outlined color="transparent" align="justify">
                 <span style="white-space: normal">
-                  <h2 align="center" style="text-decoration: none; color: white"> Para ver la historia registrate</h2>
+                  <h2 align="center" style="text-decoration: none; color: white"> Más info</h2>
                 </span>
           </v-card>
           <dibox v-show="show1" @close="hideDialog()">

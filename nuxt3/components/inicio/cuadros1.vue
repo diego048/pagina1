@@ -11,7 +11,8 @@
           align="center"
           v-scrolls
         >
-          <NuxtLink v-if="activador" to="/proyectos" style="text-decoration: none">
+        <div v-if="activador">
+          <NuxtLink to="/proyectos" style="text-decoration: none">
             <v-card elevation="20">
               <v-img
                 :src="card.src"
@@ -21,7 +22,9 @@
               ></v-img>
             </v-card>
           </NuxtLink>
-          <NuxtLink v-if="!activador" :to="{ name: 'login' }" style="text-decoration: none">
+          </div>
+          <div v-if="!activador">
+          <NuxtLink :to="{ name: 'login' }" style="text-decoration: none">
             <v-card elevation="20">
               <v-img
                 :src="card.src"
@@ -31,6 +34,7 @@
               ></v-img>
             </v-card>
           </NuxtLink>
+          </div>
         </v-col>
       </v-row>
     </v-container>

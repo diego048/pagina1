@@ -656,6 +656,8 @@
         p6: ima22,
         p7: ima23,
         p8: ima10,
+        username: "",
+        password: "",
         slides: ["First", "Second", "Third", "Fourth", "Fifth"],
         cards: [
           {id: 1, show: false, src: ima4, cover: true},

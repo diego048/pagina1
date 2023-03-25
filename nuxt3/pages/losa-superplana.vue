@@ -117,13 +117,13 @@
                   >
                   </v-img>
                 </v-card>                
-                <dibox v-show="card.show" @close="hideDialog(card)">
+                <dibox v-show="card.show" @close="hideDialog(card)" style="background-color: transparent">
                     <v-container fluid class="accent pa-0 align-start">
                         <v-col>
                         <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
                             <div style="position: relative">
                             <v-img
-                                style="height: 100%; width: 60vw"
+                                style="height: 100%; width: 80vw"
                                 :src="card.src"
                                 :lazy-src="card.src"
                             >

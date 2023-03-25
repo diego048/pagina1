@@ -363,7 +363,7 @@
         document.body.style.top = this.topPos;
         document.body.style.width = '';
         document.body.style.overflowY = '';
-        window.scrollTo("#emp1");
+        window.scrollTo("#historia");
     }
     },
   });

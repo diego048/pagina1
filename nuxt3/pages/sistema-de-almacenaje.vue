@@ -51,7 +51,7 @@
                     <v-card-subtitle> más info </v-card-subtitle>
                 </v-card>                
                 <dibox v-show="card.show" @close="hideDialog(card)">
-                   <v-container style=" overflow-x:hidden">
+                   <v-container style=" overflow:hidden">
                     <div class="d-flex justify-space-between">
                        <div>
                       <v-card-title class="d-flex justify-end text-pre-wrap" style="word-break: break-word"
@@ -86,7 +86,9 @@
                           </v-col>
                           <v-col cols="12" sm="6" md="6">
                             <div class="d-none d-sm-flex">
-                                <v-img :src="card.src" cover></v-img>
+                                <div>
+                                    <v-img :src="card.src" cover></v-img>
+                                </div>
                             </div>
                             <div class="d-flex d-sm-none">
                                 <v-img :src="card.src" style="width: 100%"></v-img>

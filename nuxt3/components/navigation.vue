@@ -90,22 +90,31 @@
       <v-btn v-if="state" @click="logout" class="link" v-show="!mobile">
         log out
       </v-btn>
-                    <v-btn
-        class="ma-2"
-        color="primary"
-        @click="expand = !expand"
-      >
-        Expand Transition
-      </v-btn>
-
-      <v-expand-transition>
-        <v-card
-          v-show="expand"
-          height="100"
-          width="100"
-          class="mx-auto bg-secondary"
-        ></v-card>
-      </v-expand-transition>
+        <div class="text-center">
+    <v-menu
+      transition="scale-transition"
+      origin="center center"
+    >
+      <template v-slot:activator="{ props }">
+        <v-btn
+          dark
+          color="primary"
+          v-bind="props"
+        >
+          Scale Transition
+        </v-btn>
+      </template>
+      <v-list>
+        <v-list-item
+          v-for="n in 5"
+          :key="n"
+          @click="() => {}"
+        >
+          <v-list-item-title v-text="'Item ' + n"></v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+  </div>
       </v-app-bar>
       <v-main>
       </v-main>

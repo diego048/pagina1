@@ -83,7 +83,12 @@
                           </div>
                           </v-col>
                           <v-col cols="12" sm="6" md="6">
-                            <v-img :src="card.src" style="width: 100%"></v-img>
+                            <div class="d-none d-sm-flex">
+                                <v-img :src="card.src" style="width: 100%" cover></v-img>
+                            </div>
+                            <div class="d-flex d-sm-none">
+                                <v-img :src="card.src" style="width: 100%"></v-img>
+                            </div>
                           </v-col>
                         </v-row>
                     </div>

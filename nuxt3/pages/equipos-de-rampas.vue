@@ -14,11 +14,11 @@
             <br />
             <v-col cols="12" sm="8" md="8">
             <div class="d-none d-sm-flex">
-              <div>
+              <div style="height: 85vh; width: 100%">
                 <v-img
                 :src="p1"
                 :lazy-src="p1"
-                style="height: 85vh"
+                style="height: 85vh; width: 100%"
               />
               </div>
              </div>

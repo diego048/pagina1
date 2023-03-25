@@ -988,6 +988,13 @@
         scrollPosition: 0,
       };
     },
+      unmounted(){
+    document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+  },
     methods: {
       showDialog() {
         this.scrollPosition = window.pageYOffset;

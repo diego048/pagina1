@@ -123,7 +123,15 @@
                         <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
                             <div style="position: relative">
                             <v-img
-                                style="height: 100%; width: 80vw"
+                                class="d-none d-sm-flex"
+                                style="height: 100%; width: 60vw"
+                                :src="card.src"
+                                :lazy-src="card.src"
+                            >
+                            </v-img>
+                            <v-img
+                                class="dd-flex d-sm-none"
+                                style="height: 100%; width: 90vw"
                                 :src="card.src"
                                 :lazy-src="card.src"
                             >

@@ -86,8 +86,10 @@
                           </v-col>
                           <v-col cols="12" sm="6" md="6" style="height: 100%">
                             <div class="d-none d-sm-flex">
-                                <br />
-                                <v-img max-height="600" :src="card.src" cover></v-img>
+                                <div style="min-height: 600px">
+                                    <br />
+                                    <v-img min-height="600" :src="card.src" cover></v-img>
+                                </div>
                             </div>
                             <div class="d-flex d-sm-none">
                                 <v-img :src="card.src" style="width: 100%; height: 100%"></v-img>

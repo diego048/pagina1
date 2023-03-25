@@ -84,7 +84,7 @@
                           </v-btn>
                           </div>
                           </v-col>
-                          <v-col cols="12" sm="6" lass="flex d-flex align-self-stretch"> md="6" style="border-color: red">
+                          <v-col cols="12" sm="6" class="flex d-flex align-self-stretch" md="6" style="border-color: red">
                             <div class="d-none d-sm-flex">
                                 <div style="height: 100%; width:100%" >
                                     <v-img :src="card.src" cover></v-img>

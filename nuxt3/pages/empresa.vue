@@ -312,7 +312,6 @@
         alert: false,
         scrollPosition: 0,
         isFixed: true,
-        scrollPosition: "",
       };
     },
     components: {},
@@ -352,7 +351,7 @@
         this.scrollPosition = window.pageYOffset;
         this.show1 = true;
         this.isFixed = false;
-        this.topPos = this.$refs.myElement.getBoundingClientRect().top + 'px';
+        this.scrollPosition = this.$refs.myElement.getBoundingClientRect().top + 'px';
         document.body.style.width = '100%';
         document.body.style.overflowY = 'hidden';
     },
@@ -360,7 +359,7 @@
         this.show1 = false;
         document.body.style.position = 'static';
         this.isFixed = true;
-        this.topPos = '';
+        this.scrollPosition = '';
         document.body.style.width = '';
         document.body.style.overflowY = '';
         window.scrollTo(0, this.scrollPosition);

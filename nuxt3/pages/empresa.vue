@@ -344,8 +344,8 @@
       showDialog() {
         this.scrollPosition = window.pageYOffset;
         this.show1 = true;
-        this.$refs.myElement.classList.remove('my-relative-class');
-        this.$refs.myElement.classList.add('my-fixed-class');
+        this.$refs.myElement.classList.remove('static1');
+        this.$refs.myElement.classList.add('fixe1');
         document.body.style.top = `-${this.scrollPosition}px`;
         document.body.style.width = '100%';
         document.body.style.overflowY = 'hidden';
@@ -353,8 +353,8 @@
     hideDialog() {
         this.show1 = false;
         document.body.style.position = 'static';
-        this.$refs.myElement.classList.remove('my-fixed-class');
-        this.$refs.myElement.classList.add('my-relative-class');
+        this.$refs.myElement.classList.remove('fixe1');
+        this.$refs.myElement.classList.add('static1');
         document.body.style.top = '';
         document.body.style.width = '';
         document.body.style.overflowY = '';

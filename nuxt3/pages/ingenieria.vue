@@ -416,7 +416,37 @@
                       >
                       </v-img>
                 </v-card>
-                <dibox v-show="show1" @close="hideDialog1()">
+            </v-col>
+            <!--Simuladores para Picking-->
+            <v-col
+                id="in6"
+                cols="12"
+                md="6"
+                sm="6"
+                align="center"
+                v-scrolls
+                v-if="activador"
+              >
+                <h1>Simuladores para Picking</h1>
+                <br />
+                <br />
+                <br />
+                <v-card @click="showDialog2()" elevation="21" align="center" style="width: 100%"  v-scrolls>
+                <v-img
+                        height="300px"
+                        :src="p7"
+                        :lazy-src="p7"
+                      >
+                      </v-img>
+                </v-card>
+            </v-col>
+          </v-row>
+
+        </v-container>
+        <br />
+        <br />
+      </div>
+                     <dibox v-show="show1" @close="hideDialog1()">
                   <v-container fluid class="accent pa-0 align-start">
                     <v-col>
                       <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
@@ -442,30 +472,7 @@
                     </v-col>
                   </v-container>
                 </dibox>
-            </v-col>
-            <!--Simuladores para Picking-->
-            <v-col
-                id="in6"
-                cols="12"
-                md="6"
-                sm="6"
-                align="center"
-                v-scrolls
-                v-if="activador"
-              >
-                <h1>Simuladores para Picking</h1>
-                <br />
-                <br />
-                <br />
-                <v-card @click="showDialog2()" elevation="21" align="center" style="width: 100%"  v-scrolls>
-                <v-img
-                        height="300px"
-                        :src="p7"
-                        :lazy-src="p7"
-                      >
-                      </v-img>
-                </v-card>
-                <dibox v-show="show2" @close="hideDialog2()">
+       <dibox v-show="show2" @close="hideDialog2()">
                   <v-container fluid class="accent pa-0 align-start">
                     <v-col>
                       <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
@@ -491,13 +498,6 @@
                     </v-col>
                   </v-container>
                 </dibox>
-            </v-col>
-          </v-row>
-
-        </v-container>
-        <br />
-        <br />
-      </div>
       <div v-for="(card, index) in cards4" :key="index" v-if="!activador1">
           <dibox v-show="card.show" @close="hideDialog(card)">
                         <v-row>

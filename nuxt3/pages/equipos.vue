@@ -83,6 +83,22 @@
                 </v-col>
             </v-row>
         </v-container>
+              <v-btn
+        class="ma-2"
+        color="primary"
+        @click="expand = !expand"
+      >
+        Expand Transition
+      </v-btn>
+
+      <v-expand-transition>
+        <v-card
+          v-show="expand"
+          height="100"
+          width="100"
+          class="mx-auto bg-secondary"
+        ></v-card>
+      </v-expand-transition>
     <br />
     <!--pie de pagina -->
     <pie />
@@ -153,6 +169,7 @@ export default {
     },
   data() {
     return {
+      expand: false,
       p1: imagen1,
       showModal: false,
       cards: [

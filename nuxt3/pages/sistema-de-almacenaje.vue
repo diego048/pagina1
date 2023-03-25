@@ -84,9 +84,9 @@
                           </v-btn>
                           </div>
                           </v-col>
-                          <v-col cols="12" sm="6" class="flex d-flex align-self-stretch" md="6" style="border-color: red">
+                          <v-col cols="12" sm="6" md="6">
                             <div class="d-none d-sm-flex">
-                                <div class="d-flex">
+                                <div>
                                     <v-img :src="card.src" style="width:100%; height: 100%" cover></v-img>
                                 </div>
                             </div>

@@ -86,7 +86,7 @@
                           </v-col>
                           <v-col cols="12" sm="6" md="6">
                             <div class="d-none d-sm-flex">
-                                <div style="height: 100%">
+                                <div style="height: 100%; width:100% ; border-color:red" >
                                     <v-img :src="card.src" cover></v-img>
                                 </div>
                             </div>

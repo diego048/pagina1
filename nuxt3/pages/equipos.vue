@@ -61,6 +61,7 @@
           </NuxtLink>
         </v-col>
       </v-row>
+     </v-container>
     <br />
     <!--pie de pagina -->
     <pie />

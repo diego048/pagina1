@@ -509,8 +509,7 @@
           <dibox v-show="card.show" @close="hideDialog(card)">
                         <v-row>
                           <v-col cols="0" md="1"></v-col>
-                          <v-col cols="12" md="10">
-                            <v-card>
+                          <v-col cols="12" md="10" style="width: 90vw; height: 100%">
                               <v-alert
                                   v-model="alert"
                                   border="start"
@@ -530,7 +529,6 @@
                                 </v-card-actions>
                               <v-container>
                                   <v-row align="center">
-                                <v-divider></v-divider>
                                   <v-col cols="12" align="center" class="register">
                                       <h2>Log in</h2>
                                       <br />
@@ -540,7 +538,6 @@
                                   </v-col>
                                   </v-row>
                               </v-container>
-                            </v-card>
                           </v-col>
                         </v-row>
           </dibox>

@@ -288,6 +288,14 @@ export default {
 .slide-leave-to {
  transform: translateY(-50%) translateX(100vw);
 }
+#background {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url("../assets/poderosa/Ejecucion.jpg");
+    background-position: 50% 35%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 180px;
+  }
 </style>
 
   

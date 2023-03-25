@@ -363,7 +363,7 @@
         document.body.style.top = this.topPos;
         document.body.style.width = '';
         document.body.style.overflowY = '';
-        window.scrollTo(0, this.scrollPosition);
+        window.scrollTo("#emp1");
     }
     },
   });

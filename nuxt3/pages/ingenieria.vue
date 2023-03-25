@@ -81,7 +81,7 @@
             </v-row>
           </v-container>
         </div>
-        <div v-for="(card, index) in cards" :key="index" v-if="!activador1">
+        <div v-for="(card, index) in cards4" :key="index" v-if="!activador1">
           <dibox v-show="card.show" @close="hideDialog(card)">
                         <v-row>
                           <v-col cols="0" md="1"></v-col>

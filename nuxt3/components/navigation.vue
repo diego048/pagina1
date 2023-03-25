@@ -90,7 +90,22 @@
       <v-btn v-if="state" @click="logout" class="link" v-show="!mobile">
         log out
       </v-btn>
+                    <v-btn
+        class="ma-2"
+        color="primary"
+        @click="expand = !expand"
+      >
+        Expand Transition
+      </v-btn>
 
+      <v-expand-transition>
+        <v-card
+          v-show="expand"
+          height="100"
+          width="100"
+          class="mx-auto bg-secondary"
+        ></v-card>
+      </v-expand-transition>
       </v-app-bar>
       <v-main>
       </v-main>
@@ -104,6 +119,7 @@ import ima2 from "../assets/imagenes/logicorpweb1.png";
 export default defineComponent({
   data() {
       return {
+      expand: false,
       drawer: false,
       mobile: null,
       windowwith: null,

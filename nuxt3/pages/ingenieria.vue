@@ -474,27 +474,35 @@
                     </v-col>
                   </v-container>
                 </dibox>
-       <dibox v-show="show2" @close="hideDialog2()">
-                  <v-row>
-                    <v-col>
-                          <v-img
-                            style="height: 80vh; width: 100%"
-                            :src="p7"
-                            :lazy-src="p7"
-                          >
-                          </v-img>
-                          <v-card-actions
-                            style="position: absolute; top: 0; right: 0"
-                          >
-                            <v-btn
-                              variant="flat"
-                              color="error"
-                              @click="hideDialog2()"
-                              >X</v-btn
+                <dibox v-show="show2" @close="hideDialog2()">
+                                        <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
+                            <div style="position: relative">
+                            <v-img
+                                class="d-none d-sm-flex"
+                                style="height: 100%; width: 60vw"
+                                :src="p7"
+                                :lazy-src="p7"
                             >
-                          </v-card-actions>
-                    </v-col>
-                    </v-row>
+                            </v-img>
+                            <v-img
+                                class="dd-flex d-sm-none"
+                                style="height: 100%; width: 90vw"
+                                :src="p7"
+                                :lazy-src="p7"
+                            >
+                            </v-img>
+                            <v-card-actions
+                                style="position: absolute; top: 0; right: 0"
+                            >
+                                <v-btn
+                                variant="flat"
+                                color="error"
+                                @click="hideDialog(card)"
+                                >X</v-btn
+                                >
+                            </v-card-actions>
+                            </div>
+                        </v-card>
                 </dibox>
       <div v-for="(card, index) in cards4" :key="index" v-if="!activador1">
           <dibox v-show="card.show" @close="hideDialog(card)">

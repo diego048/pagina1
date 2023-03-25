@@ -6,7 +6,7 @@
           <source src="../assets/imagenes/logicorp1.mp4" type="video/mp4" />
         </video>
       </div>
-      <v-container>
+      <v-container class="clase1">
         <br />
         <div style="position: relative">
           <v-row style="color: white">
@@ -344,17 +344,17 @@
       showDialog() {
         this.scrollPosition = window.pageYOffset;
         this.show1 = true;
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${this.scrollPosition}px`;
-        document.body.style.width = '100%';
-        document.body.style.overflowY = 'hidden';
+        document.querySelector('clase1').style.position = 'fixed';
+        document.querySelector('clase1').style.top = `-${this.scrollPosition}px`;
+        document.querySelector('clase1').style.width = '100%';
+        document.querySelector('clase1').style.overflowY = 'hidden';
     },
     hideDialog() {
         this.show1 = false;
-        document.body.style.position = 'static';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        document.body.style.overflowY = '';
+        document.querySelector('clase1').style.position = 'static';
+        document.querySelector('clase1').style.top = '';
+        document.querySelector('clase1').style.width = '';
+        document.querySelector('clase1').style.overflowY = '';
         window.scrollTo(0, this.scrollPosition);
     }
     },

@@ -6,7 +6,7 @@
           <source src="../assets/imagenes/logicorp1.mp4" type="video/mp4" />
         </video>
       </div>
-      <v-container :class="positionClass" ref="myElement" :style="{ top: topPos}>
+      <v-container :class="positionClass" ref="myElement" :style="{ top: topPos}">
         <br />
         <div style="position: relative">
           <v-row style="color: white">

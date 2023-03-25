@@ -360,7 +360,7 @@
         this.show1 = false;
         document.body.style.position = 'static';
         this.isFixed = true;
-        document.body.style.top = '';
+        document.body.style.top = this.topPos;
         document.body.style.width = '';
         document.body.style.overflowY = '';
         window.scrollTo(0, this.scrollPosition);

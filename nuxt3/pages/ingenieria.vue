@@ -348,10 +348,8 @@
                 v-scrolls
                 v-if="activador"
               >
-                <v-dialog v-model="card.show" width="80vw">
-                  <template v-slot:activator="{ props }">
-                    <v-card elevation="21" v-bind="props">
-                      <v-img
+               <v-card @click="showDialog(card)" elevation="21" align="center" style="width: 100%"  v-scrolls>
+                <v-img
                         v-if="card.cover"
                         :src="card.src"
                         height="300px"
@@ -365,8 +363,8 @@
                         :lazy-src="card.src"
                       >
                       </v-img>
-                    </v-card>
-                  </template>
+                </v-card>
+                <dibox v-show="card.show" @close="hideDialog(card)">
                   <v-container fluid class="accent pa-0 align-start">
                     <v-col>
                       <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
@@ -383,7 +381,7 @@
                             <v-btn
                               variant="flat"
                               color="error"
-                              @click="card.show = false"
+                              @click="hideDialog(card)"
                               >X</v-btn
                             >
                           </v-card-actions>
@@ -391,7 +389,7 @@
                       </v-card>
                     </v-col>
                   </v-container>
-                </v-dialog>
+                </dibox>
             </v-col>
           </v-row>
           </div>
@@ -409,19 +407,16 @@
                 v-scrolls
                 v-if="activador"
               >
-                <h1>Simuladores para Definir Equipos de Material Handling</h1>
-                <br />
-                <v-dialog v-model="show1" width="80vw">
-                  <template v-slot:activator="{ props }">
-                    <v-card elevation="21" v-bind="props">
-                      <v-img
+                <h1 align="center">Simuladores para Definir Sistemas de Almacenaje</h1>
+                <v-card @click="showDialog1()" elevation="21" align="center" style="width: 100%"  v-scrolls>
+                    <v-img
                         height="300px"
                         :src="p6"
                         :lazy-src="p6"
                       >
                       </v-img>
-                    </v-card>
-                  </template>
+                </v-card>
+                <dibox v-show="show1" @close="hideDialog1()">
                   <v-container fluid class="accent pa-0 align-start">
                     <v-col>
                       <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
@@ -438,7 +433,7 @@
                             <v-btn
                               variant="flat"
                               color="error"
-                              @click="show1 = false"
+                              @click="hideDialog1()"
                               >X</v-btn
                             >
                           </v-card-actions>
@@ -446,7 +441,7 @@
                       </v-card>
                     </v-col>
                   </v-container>
-                </v-dialog>
+                </dibox>
             </v-col>
             <!--Simuladores para Picking-->
             <v-col
@@ -462,17 +457,15 @@
                 <br />
                 <br />
                 <br />
-                <v-dialog v-model="show2" width="80vw">
-                  <template v-slot:activator="{ props }">
-                    <v-card elevation="21" v-bind="props">
-                      <v-img
+                <v-card @click="showDialog2()" elevation="21" align="center" style="width: 100%"  v-scrolls>
+                <v-img
                         height="300px"
                         :src="p7"
                         :lazy-src="p7"
                       >
                       </v-img>
-                    </v-card>
-                  </template>
+                </v-card>
+                <dibox v-show="show2" @close="hideDialog2()">
                   <v-container fluid class="accent pa-0 align-start">
                     <v-col>
                       <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
@@ -489,7 +482,7 @@
                             <v-btn
                               variant="flat"
                               color="error"
-                              @click="show2 = false"
+                              @click="hideDialog2()"
                               >X</v-btn
                             >
                           </v-card-actions>
@@ -497,7 +490,7 @@
                       </v-card>
                     </v-col>
                   </v-container>
-                </v-dialog>
+                </dibox>
             </v-col>
           </v-row>
 
@@ -741,8 +734,40 @@
         document.body.style.width = '100%';
         document.body.style.overflowY = 'hidden';
     },
+    showDialog1() {
+        this.scrollPosition = window.pageYOffset;
+        this.show1 = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
+    },
+    showDialog2() {
+        this.scrollPosition = window.pageYOffset;
+        this.show2 = true;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'hidden';
+    },
     hideDialog(card) {
         (card.show) = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    }
+    hideDialog1() {
+        this.show1 = false;
+        document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+    }
+    hideDialog2() {
+        this.show2 = false;
         document.body.style.position = 'static';
         document.body.style.top = '';
         document.body.style.width = '';

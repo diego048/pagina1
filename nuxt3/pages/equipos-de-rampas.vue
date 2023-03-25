@@ -48,7 +48,7 @@
                 </v-card>                
                 <dibox v-show="card.show" @close="hideDialog(card)">
                     <div class="d-flex justify-space-between">
-                      <v-card-title class="d-flex justify-end"
+                      <v-card-title class="d-flex justify-end text-pre-wrap" style="word-break: break-word"
                         >{{ card.title }}</v-card-title
                       >
                       <v-card-actions class="d-flex justify-start">

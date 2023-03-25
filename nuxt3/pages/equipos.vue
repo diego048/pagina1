@@ -1,14 +1,20 @@
 <template>
   <div>
-    <div class="contenedor">
-      <v-img
-        cover
-        :src="p1"
-        style="filter: brightness(25%)"
-      />
-      <div class="centrado">
-        <h1 align="center" color="white">EQUIPAMIENTO WORLD CLASS WAREHOUSING (WCW)</h1>
-      </div>
+    <div cover id="background">
+        <v-container>
+          <v-row>
+            <v-col cols="12">
+              <br />
+              <br />
+              <div>
+                <h1 style="color: white" align="center">
+                  EQUIPAMIENTO WORLD CLASS WAREHOUSING (WCW)
+                </h1>
+                <br />
+              </div>
+            </v-col>
+          </v-row>
+        </v-container>
     </div>
     <v-container>
       <br />

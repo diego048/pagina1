@@ -29,7 +29,7 @@
               </div>
              </div>
               <div class="d-flex d-sm-none">
-                <v-img :src="card.src" style="width: 100%; height: 100%"></v-img>
+                <v-img :src="p1" style="width: 100%"></v-img>
               </div>
             </v-col>
           </v-row>

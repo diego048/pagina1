@@ -475,10 +475,8 @@
                   </v-container>
                 </dibox>
        <dibox v-show="show2" @close="hideDialog2()">
-                  <v-container fluid class="accent pa-0 align-start">
+                  <v-row>
                     <v-col>
-                      <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
-                        <div style="position: relative">
                           <v-img
                             style="height: 80vh; width: 100%"
                             :src="p7"
@@ -495,10 +493,8 @@
                               >X</v-btn
                             >
                           </v-card-actions>
-                        </div>
-                      </v-card>
                     </v-col>
-                  </v-container>
+                    </v-row>
                 </dibox>
       <div v-for="(card, index) in cards4" :key="index" v-if="!activador1">
           <dibox v-show="card.show" @close="hideDialog(card)">

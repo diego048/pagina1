@@ -51,11 +51,13 @@
                     <v-card-subtitle> más info </v-card-subtitle>
                 </v-card>                
                 <dibox v-show="card.show" @close="hideDialog(card)">
-                   <div style="width: 90vw; overflow-x:hidden">
+                   <v-container style=" overflow-x:hidden">
                     <div class="d-flex justify-space-between">
+                       <div>
                       <v-card-title class="d-flex justify-end text-pre-wrap" style="word-break: break-word"
                         >{{ card.title }}</v-card-title
                       >
+                      </div>
                       <v-card-actions class="d-flex justify-start">
                         <v-btn
                           style="color: rgb(203, 50, 52)"
@@ -91,7 +93,7 @@
                             </div>
                           </v-col>
                         </v-row>
-                    </div>
+                    </v-container>
                 </dibox>
             </v-col>
             

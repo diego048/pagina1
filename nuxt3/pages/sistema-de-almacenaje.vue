@@ -141,7 +141,7 @@
                       </v-card-actions>
                       </div>
                       <v-divider></v-divider>
-                    <v-row>
+                    <v-row class="flex d-flex align-self-stretch">
                           <v-col cols="12" sm="6" md="6" class="align-self-center">
                             {{ card.info }}
                             <br />

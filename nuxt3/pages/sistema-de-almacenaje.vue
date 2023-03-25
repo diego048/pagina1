@@ -51,8 +51,8 @@
                     <v-card-subtitle> más info </v-card-subtitle>
                 </v-card>                
                 <dibox v-show="card.show" @close="hideDialog(card)">
-                   <div style="width: 100%; overflow-x:hidden">
-                    <div class="d-flex justify-space-between" style="width: 100%">
+                   <div style="width: 90vw; overflow-x:hidden">
+                    <div class="d-flex justify-space-between">
                       <v-card-title class="d-flex justify-end text-pre-wrap" style="word-break: break-word"
                         >{{ card.title }}</v-card-title
                       >

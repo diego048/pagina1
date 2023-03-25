@@ -7,7 +7,7 @@
             <source src="../assets/imagenes/proyect.mp4" type="video/webm" />
             <source src="../assets/imagenes/proyect.mp4" type="video/mp4" />
           </video>
-          <v-container class="p1" align="center" style="height: 70vh">
+          <v-container class="p1" align="center" style="height: 60vh">
             <v-row>
               <v-col cols="12" sm="5" md="4" class="align-self-center">
                     <h1 style="color: rgb(255, 102, 26)" align="justify">Diseño de Almacenes WCW</h1>

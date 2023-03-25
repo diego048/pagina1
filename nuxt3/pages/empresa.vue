@@ -6,7 +6,7 @@
           <source src="../assets/imagenes/logicorp1.mp4" type="video/mp4" />
         </video>
       </div>
-      <v-container :class="positionClass" ref="myElement">
+      <v-container class="positionClass" ref="myElement">
         <br />
         <div style="position: relative">
           <v-row style="color: white">
@@ -317,7 +317,7 @@
     components: {},
     computed: {
     positionClass() {
-      return this.isFixed ? 'static1' : 'fixe1';
+      return this.isFixed ? "static1" : "fixe1";
     }
   },
     methods: {

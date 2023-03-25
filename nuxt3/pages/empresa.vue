@@ -352,7 +352,7 @@
         this.scrollPosition = window.pageYOffset;
         this.show1 = true;
         this.isFixed = false;
-        this.topPos = `-${this.scrollPosition}px`;
+        document.body.style.top = `-${this.scrollPosition}px`;
         document.body.style.width = '100%';
         document.body.style.overflowY = 'hidden';
     },

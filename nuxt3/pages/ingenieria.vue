@@ -81,46 +81,6 @@
             </v-row>
           </v-container>
         </div>
-        <div v-for="(card, index) in cards4" :key="index" v-if="!activador1">
-          <dibox v-show="card.show" @close="hideDialog(card)">
-                        <v-row>
-                          <v-col cols="0" md="1"></v-col>
-                          <v-col cols="12" md="10">
-                            <v-card>
-                              <v-alert
-                                  v-model="alert"
-                                  border="start"
-                                  type="error"
-                                  transition="slide-y-transition"
-                                  >
-                                  Usuario o Contraseña Equivocado
-                                  </v-alert>
-                                <v-card-actions class="d-flex justify-end">
-                                  <v-btn
-                                    style="color: rgb(203, 50, 52)"
-                                    variant="text"
-                                    @click="card.show = false"
-                                  >
-                                    <h1>X</h1>
-                                  </v-btn>
-                                </v-card-actions>
-                              <v-container>
-                                  <v-row align="center">
-                                <v-divider></v-divider>
-                                  <v-col cols="12" align="center" class="register">
-                                      <h2>Log in</h2>
-                                      <br />
-                                      <input type="text" placeholder="Username" v-model="username" />
-                                      <input type="password" placeholder="password" v-model="password" />
-                                      <v-btn v-on:click="log2(card)">log in</v-btn>
-                                  </v-col>
-                                  </v-row>
-                              </v-container>
-                            </v-card>
-                          </v-col>
-                        </v-row>
-          </dibox>
-        </div>
         <!-- La cabecera con la info-->
         <div v-if="activador1">
         <v-container>
@@ -545,6 +505,46 @@
         <br />
         <br />
       </div>
+      <div v-for="(card, index) in cards4" :key="index" v-if="!activador1">
+          <dibox v-show="card.show" @close="hideDialog(card)">
+                        <v-row>
+                          <v-col cols="0" md="1"></v-col>
+                          <v-col cols="12" md="10">
+                            <v-card>
+                              <v-alert
+                                  v-model="alert"
+                                  border="start"
+                                  type="error"
+                                  transition="slide-y-transition"
+                                  >
+                                  Usuario o Contraseña Equivocado
+                                  </v-alert>
+                                <v-card-actions class="d-flex justify-end">
+                                  <v-btn
+                                    style="color: rgb(203, 50, 52)"
+                                    variant="text"
+                                    @click="card.show = false"
+                                  >
+                                    <h1>X</h1>
+                                  </v-btn>
+                                </v-card-actions>
+                              <v-container>
+                                  <v-row align="center">
+                                <v-divider></v-divider>
+                                  <v-col cols="12" align="center" class="register">
+                                      <h2>Log in</h2>
+                                      <br />
+                                      <input type="text" placeholder="Username" v-model="username" />
+                                      <input type="password" placeholder="password" v-model="password" />
+                                      <v-btn v-on:click="log2(card)">log in</v-btn>
+                                  </v-col>
+                                  </v-row>
+                              </v-container>
+                            </v-card>
+                          </v-col>
+                        </v-row>
+          </dibox>
+        </div>
         <!--pie de pagina -->
         <pie />
       </div>
@@ -640,6 +640,13 @@
       ],
       })
     },
+      unmounted(){
+    document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+  },
     data() {
       return {
         scrollPosition: 0,

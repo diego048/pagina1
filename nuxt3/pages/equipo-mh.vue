@@ -19,11 +19,18 @@
               </div>
             </v-col>
             <v-col cols="12" sm="12" md="8">
-              <v-img
+            <div class="d-none d-sm-flex">
+              <div>
+                <v-img
                 :src="p1"
                 :lazy-src="p1"
                 style="height: 80vh"
               />
+              </div>
+             </div>
+              <div class="d-flex d-sm-none">
+                <v-img :src="card.src" style="width: 100%; height: 100%"></v-img>
+              </div>
             </v-col>
           </v-row>
         </v-container>

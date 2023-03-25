@@ -87,7 +87,7 @@
                           <v-col cols="12" sm="6" class="flex d-flex align-self-stretch" md="6" style="border-color: red">
                             <div class="d-none d-sm-flex">
                                 <div class="d-flex">
-                                    <v-img :src="card.src" style="width:100%; height: 100%"" cover></v-img>
+                                    <v-img :src="card.src" style="width:100%; height: 100%" cover></v-img>
                                 </div>
                             </div>
                             <div class="d-flex d-sm-none">

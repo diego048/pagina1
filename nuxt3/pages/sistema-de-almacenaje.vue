@@ -51,6 +51,7 @@
                     <v-card-subtitle> más info </v-card-subtitle>
                 </v-card>                
                 <dibox v-show="card.show" @close="hideDialog(card)">
+                   <div style="width: 100%">
                     <div class="d-flex justify-space-between">
                       <v-card-title class="d-flex justify-end"
                         >{{ card.title }}</v-card-title
@@ -82,10 +83,10 @@
                           </div>
                           </v-col>
                           <v-col cols="12" sm="6" md="6">
-                            <v-img :src="card.src" style="height: 70vh"></v-img>
+                            <v-img :src="card.src" style="width: 100%"></v-img>
                           </v-col>
                         </v-row>
-      
+                    </div>
                 </dibox>
             </v-col>
             

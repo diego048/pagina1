@@ -1,5 +1,6 @@
 <template>
     <div cover id="background1">
+    <div style="margin-top: 100px;" class="d-flex d-sm-none" ></div>
       <v-container style="color: white">
         <br class="d-none d-sm-flex" />
         <v-row class="d-none d-sm-flex">

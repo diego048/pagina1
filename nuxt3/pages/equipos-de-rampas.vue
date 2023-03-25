@@ -78,7 +78,15 @@
                             </div>
                             </v-col>
                             <v-col cols="12" sm="6" md="6">
-                              <v-img v-if="!card.show1" :src="card.src" style="height: 70vh"></v-img>
+                            <div class="d-none d-sm-flex"  v-if="!card.show1">
+                                <div style="min-height: 400px; width:100%">
+                                    <br />
+                                    <v-img min-height="400" :src="card.src" cover></v-img>
+                                </div>
+                            </div>
+                            <div class="d-flex d-sm-none"  v-if="!card.show1">
+                                <v-img :src="card.src" style="width: 100%; height: 100%"></v-img>
+                            </div>
                               <v-carousel
                                 v-if="card.show1"
                                 show-arrows="hover"

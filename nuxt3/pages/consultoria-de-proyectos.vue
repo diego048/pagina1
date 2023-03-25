@@ -51,6 +51,7 @@
             </v-col>
           </v-row>
         </v-container>
+        <div style="margin-top: 50px;" class="d-flex d-sm-none" ></div>
         <br />
         <!--pie de pagina -->
         <pie />

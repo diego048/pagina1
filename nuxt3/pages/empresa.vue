@@ -6,7 +6,7 @@
           <source src="../assets/imagenes/logicorp1.mp4" type="video/mp4" />
         </video>
       </div>
-      <v-container :class="positionClass" ref="myElement">
+      <v-container :class="positionClass" ref="myElement" :style="{ top: scrollPosition}">
         <br />
         <div style="position: relative">
           <v-row style="color: white">
@@ -312,6 +312,7 @@
         alert: false,
         scrollPosition: 0,
         isFixed: true,
+        scrollPosition: "",
       };
     },
     components: {},
@@ -351,7 +352,7 @@
         this.scrollPosition = window.pageYOffset;
         this.show1 = true;
         this.isFixed = false;
-        document.body.style.top = `-${this.scrollPosition}px`;
+        this.topPos = this.$refs.myElement.getBoundingClientRect().top + 'px';
         document.body.style.width = '100%';
         document.body.style.overflowY = 'hidden';
     },
@@ -359,7 +360,7 @@
         this.show1 = false;
         document.body.style.position = 'static';
         this.isFixed = true;
-        document.body.style.top = '';
+        this.topPos = '';
         document.body.style.width = '';
         document.body.style.overflowY = '';
         window.scrollTo(0, this.scrollPosition);

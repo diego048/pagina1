@@ -117,7 +117,7 @@
                   >
                   </v-img>
                 </v-card>                
-                <dibox v-show="card.show" @close="hideDialog(card)" style="background-color: transparent">
+                <dibox v-show="card.show" @close="hideDialog(card)">
                     <v-container fluid class="accent pa-0 align-start">
                         <v-col>
                         <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">

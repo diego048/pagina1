@@ -757,7 +757,7 @@
         document.body.style.width = '';
         document.body.style.overflowY = '';
         window.scrollTo(0, this.scrollPosition);
-    }
+    },
     hideDialog1() {
         this.show1 = false;
         document.body.style.position = 'static';
@@ -765,7 +765,7 @@
         document.body.style.width = '';
         document.body.style.overflowY = '';
         window.scrollTo(0, this.scrollPosition);
-    }
+    },
     hideDialog2() {
         this.show2 = false;
         document.body.style.position = 'static';

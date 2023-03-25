@@ -6,7 +6,7 @@
           <source src="../assets/imagenes/logicorp1.mp4" type="video/mp4" />
         </video>
       </div>
-      <v-container class="static1" ref="myElement">
+      <v-container :class="positionClass" ref="myElement">
         <br />
         <div style="position: relative">
           <v-row style="color: white">
@@ -311,9 +311,15 @@
         state: false,
         alert: false,
         scrollPosition: 0,
+        isFixed: true,
       };
     },
     components: {},
+    computed: {
+    positionClass() {
+      return this.isFixed ? 'static1' : 'fixe1';
+    }
+  },
     methods: {
       async log2() {
         let result = await axios
@@ -344,8 +350,7 @@
       showDialog() {
         this.scrollPosition = window.pageYOffset;
         this.show1 = true;
-        this.$refs.myElement.classList.remove('static1');
-        this.$refs.myElement.classList.add('fixe1');
+        this.isFixed: false;
         document.body.style.top = `-${this.scrollPosition}px`;
         document.body.style.width = '100%';
         document.body.style.overflowY = 'hidden';
@@ -353,8 +358,7 @@
     hideDialog() {
         this.show1 = false;
         document.body.style.position = 'static';
-        this.$refs.myElement.classList.remove('fixe1');
-        this.$refs.myElement.classList.add('static1');
+        this.isFixed: true;
         document.body.style.top = '';
         document.body.style.width = '';
         document.body.style.overflowY = '';

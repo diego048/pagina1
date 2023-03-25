@@ -76,28 +76,6 @@
           </v-btn>
       </div>
 
-      <div>
-            <v-menu>
-      <template v-slot:activator="{ props }">
-        <v-btn
-          color="primary"
-          v-bind="props"
-        >
-          Activator slot
-        </v-btn>
-      </template>
-      <v-list>
-        <v-list-item
-          v-for="(item, index) in items"
-          :key="index"
-          :value="index"
-        >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
-      </div>
-
         <v-btn class="link" :to="{ name: 'login' }" v-if="!state" v-show="!mobile">
             Login
         </v-btn>

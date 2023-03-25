@@ -237,6 +237,13 @@
   
   export default defineComponent({
     name: "empresa",
+      unmounted(){
+    document.body.style.position = 'static';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, this.scrollPosition);
+  },
     beforeMount(){
     if(localStorage.getItem("token")){
         this.activador1 = true

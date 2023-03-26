@@ -29,7 +29,7 @@
           <v-card elevation="13" v-scrolls>
             <v-container>
               <v-row>
-                <v-col cols="12" sm="6" style="min-height: 287px;height: 100%" >
+                <v-col cols="12" sm="6">
                   <v-carousel
                     show-arrows="hover"
                     hide-delimiters
@@ -72,7 +72,6 @@
                 <v-col
                   cols="12"
                   sm="6"
-                  style="min-height: 287px"
                   class="d-flex d-sm-none"
                 >
                 <v-carousel
@@ -111,7 +110,6 @@
                 <v-col
                   cols="12"
                   sm="6"
-                  style="min-height: 287px"
                   class="d-none d-sm-flex"
                 >
                   <v-carousel

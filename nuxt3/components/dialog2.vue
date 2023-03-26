@@ -24,83 +24,6 @@
                 <v-card-subtitle> más info </v-card-subtitle>
         </v-card>
         </v-col>
-        <dibox v-show="dialog" @close="hideDialog()">
-          <div class="d-flex justify-space-between">
-                <v-card-title class="d-flex justify-end">CD GLORIA</v-card-title>
-                <v-card-actions class="d-flex justify-start">
-                  <v-btn
-                    style="color: rgb(203, 50, 52)"
-                    variant="text"
-                    @click="hideDialog()"
-                  >
-                    <h1>X</h1>
-                  </v-btn>
-                </v-card-actions>
-              </div>
-              <v-divider></v-divider>
-              <v-card-text>
-                <v-carousel hide-delimiters height="auto">
-                  <v-carousel-item>
-                    <v-container>
-                      <v-row>
-                        <v-col cols="12" sm="6" md="6">
-                          <h2>Centro de distribución más alto del Perú</h2>
-                          <ol
-                            align="justify"
-                            style="
-                              padding-right: 3vh;
-                              padding-left: 3vh;
-                              font-size: 100%;
-                            "
-                          >
-                            <li>Capacidad 5000 ''s</li>
-                            <li>Almacén Autoportante</li>
-                            <li>Altura; 19 m</li>
-                            <li>
-                              Almacenamiento
-  
-                              <ol
-                                align="justify"
-                                style="
-                                  padding-right: 3vh;
-                                  padding-left: 6vh;
-                                  font-size: 100%;
-                                "
-                              >
-                                <li>Sistema Satelital</li>
-                                <li>Estantería Selectiva</li>
-                              </ol>
-                            </li>
-                            <li>Equipos MH Trilaterales</li>
-                            <li>
-                              Equipos de Rampa
-                              <ol
-                                align="justify"
-                                style="
-                                  padding-right: 3vh;
-                                  padding-left: 6vh;
-                                  font-size: 100%;
-                                "
-                              >
-                                <li>Niveladores Verticales</li>
-                                <li>Puertas Seccionales</li>
-                                <li>Abrigos</li>
-                              </ol>
-                            </li>
-                          </ol>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                          <v-img
-                            :src="p13"
-                            style="height: 100%; min-height: 287px"
-                          />
-                        </v-col>
-                      </v-row>
-                    </v-container>
-                  </v-carousel-item>
-                </v-carousel>
-              </v-card-text>
-        </dibox>
 
         <v-col
           cols="6"
@@ -882,6 +805,83 @@
         </v-col>
       </v-row>
     </v-container>
+    <dibox v-show="dialog" @close="hideDialog()">
+          <div class="d-flex justify-space-between">
+                <v-card-title class="d-flex justify-end">CD GLORIA</v-card-title>
+                <v-card-actions class="d-flex justify-start">
+                  <v-btn
+                    style="color: rgb(203, 50, 52)"
+                    variant="text"
+                    @click="hideDialog()"
+                  >
+                    <h1>X</h1>
+                  </v-btn>
+                </v-card-actions>
+              </div>
+              <v-divider></v-divider>
+              <v-card-text>
+                <v-carousel hide-delimiters height="auto">
+                  <v-carousel-item>
+                    <v-container>
+                      <v-row>
+                        <v-col cols="12" sm="6" md="6">
+                          <h2>Centro de distribución más alto del Perú</h2>
+                          <ol
+                            align="justify"
+                            style="
+                              padding-right: 3vh;
+                              padding-left: 3vh;
+                              font-size: 100%;
+                            "
+                          >
+                            <li>Capacidad 5000 ''s</li>
+                            <li>Almacén Autoportante</li>
+                            <li>Altura; 19 m</li>
+                            <li>
+                              Almacenamiento
+  
+                              <ol
+                                align="justify"
+                                style="
+                                  padding-right: 3vh;
+                                  padding-left: 6vh;
+                                  font-size: 100%;
+                                "
+                              >
+                                <li>Sistema Satelital</li>
+                                <li>Estantería Selectiva</li>
+                              </ol>
+                            </li>
+                            <li>Equipos MH Trilaterales</li>
+                            <li>
+                              Equipos de Rampa
+                              <ol
+                                align="justify"
+                                style="
+                                  padding-right: 3vh;
+                                  padding-left: 6vh;
+                                  font-size: 100%;
+                                "
+                              >
+                                <li>Niveladores Verticales</li>
+                                <li>Puertas Seccionales</li>
+                                <li>Abrigos</li>
+                              </ol>
+                            </li>
+                          </ol>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                          <v-img
+                            :src="p13"
+                            style="height: 100%; min-height: 287px"
+                          />
+                        </v-col>
+                      </v-row>
+                    </v-container>
+                  </v-carousel-item>
+                </v-carousel>
+              </v-card-text>
+        </dibox>
   </div>
   </template>
   <script>

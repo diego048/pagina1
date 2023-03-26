@@ -134,7 +134,9 @@
           </v-card>
           <br id="pr1" />
           <br />
+          </v-container>
           <dialog2 />
+          <v-container>
           <br id="pr2" />
           <br />
           <h2 align="center">EMPRESAS QUE CONFIARON EN NOSOTROS</h2>

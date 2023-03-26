@@ -819,7 +819,7 @@
     <dibox v-show="dialog" @close="hideDialog()" style="overflow-x:hidden">
       <v-container style="overflow-x:hidden; width: 80vw">
         <div style="overflow-x:hidden">
-          <div class="d-flex justify-space-between">
+          <div class="d-flex justify-space-between" style="overflow-x:hidden">
                 <v-card-title class="d-flex justify-end">CD GLORIA</v-card-title>
                 <v-card-actions class="d-flex justify-start">
                   <v-btn
@@ -834,8 +834,8 @@
               <v-divider></v-divider>
               <v-container style="overflow-x:hidden">
                 <v-carousel hide-delimiters height="auto" style="width:100%; overflow-x:hidden" show-arrows="hover">
-                  <v-carousel-item>
-                    <v-container>
+                  <v-carousel-item style="overflow-x:hidden">
+                    <v-container style="overflow-x:hidden">
                       <v-row>
                         <v-col cols="12" sm="6" md="6">
                           <h2>Centro de distribución más alto del Perú</h2>

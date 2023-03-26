@@ -821,7 +821,7 @@
               </div>
               <v-divider></v-divider>
               <v-container>
-                <v-carousel hide-delimiters height="auto" style="width:100%">
+                <v-carousel hide-delimiters height="auto" width="auto">
                   <v-carousel-item>
                     <v-container>
                       <v-row>

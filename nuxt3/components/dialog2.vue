@@ -816,7 +816,7 @@
         </v-col>
       </v-row>
     </v-container>
-    <dibox v-show="dialog" @close="hideDialog()">
+    <dibox v-show="dialog" @close="hideDialog()" style="overflow-x:hidden">
       <v-container style="overflow-x:hidden; width: 80vw">
         <div>
           <div class="d-flex justify-space-between">

@@ -818,7 +818,7 @@
     </v-container>
     <dibox v-show="dialog" @close="hideDialog()" style="overflow-x:hidden">
       <v-container style="overflow-x:hidden; width: 80vw">
-        <div>
+        <div style="overflow-x:hidden">
           <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end">CD GLORIA</v-card-title>
                 <v-card-actions class="d-flex justify-start">
@@ -832,7 +832,7 @@
                 </v-card-actions>
               </div>
               <v-divider></v-divider>
-              <v-container>
+              <v-container style="overflow-x:hidden">
                 <v-carousel hide-delimiters height="auto" style="width:100%; overflow-x:hidden" show-arrows="hover">
                   <v-carousel-item>
                     <v-container>

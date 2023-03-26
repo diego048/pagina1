@@ -421,9 +421,7 @@
         <br />
         <div v-for="card in cards3">
         <dibox v-show="card.show" @close="hideDialog(card)">
-                  <v-container fluid class="accent pa-0 align-start">
-                    <v-col>
-                      <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
+                          <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
                         <div style="position: relative">
                           <v-img
                             style="height: 80vh; width: 100%"
@@ -442,40 +440,34 @@
                             >
                           </v-card-actions>
                         </div>
-                      </v-card>
-                    </v-col>
-                  </v-container>
+                        </v-card>
                 </dibox>
         </div>
       </div>
                      <dibox v-show="show1" @close="hideDialog1()">
-                  <v-container fluid class="accent pa-0 align-start">
-                    <v-col>
-                      <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
-                        <div style="position: relative">
-                          <v-img
+                           <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
+                            <div style="position: relative">
+                            <v-img
                             style="height: 80vh; ; width: 100%"
                             :src="p6"
                             :lazy-src="p6"
                           >
                           </v-img>
-                          <v-card-actions
-                            style="position: absolute; top: 0; right: 0"
-                          >
-                            <v-btn
-                              variant="flat"
-                              color="error"
-                              @click="hideDialog1()"
-                              >X</v-btn
+                            <v-card-actions
+                                style="position: absolute; top: 0; right: 0"
                             >
-                          </v-card-actions>
-                        </div>
-                      </v-card>
-                    </v-col>
-                  </v-container>
+                                <v-btn
+                                variant="flat"
+                                color="error"
+                                @click="hideDialog1()"
+                                >X</v-btn
+                                >
+                            </v-card-actions>
+                            </div>
+                        </v-card>
                 </dibox>
                 <dibox v-show="show2" @close="hideDialog2()">
-                                        <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
+                           <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
                             <div style="position: relative">
                             <v-img
                                 class="d-none d-sm-flex"
@@ -497,7 +489,7 @@
                                 <v-btn
                                 variant="flat"
                                 color="error"
-                                @click="hideDialog(card)"
+                                @click="hideDialog2()"
                                 >X</v-btn
                                 >
                             </v-card-actions>

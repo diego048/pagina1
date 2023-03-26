@@ -336,7 +336,7 @@
           <v-container style="overflow-x:hidden; width: 80vw">
             <div style="overflow-x:hidden">
               <div class="d-flex justify-space-between">
-                <v-card-title class="d-flex justify-end class="text-pre-wrap" style="word-break: break-word"
+                <v-card-title class="d-flex justify-end class text-pre-wrap" style="word-break: break-word"
                   >SUPERMERCADOS PERUANOS</v-card-title
                 >
                 <v-card-actions class="d-flex justify-start">
@@ -575,7 +575,7 @@
               </div>
               <v-divider></v-divider>
               <v-container>
-                <v-carousel hide-delimiters height="auto" style="width: 100%" show-arrows="hover" style="overflow-x:hidden">
+                <v-carousel hide-delimiters height="auto" show-arrows="hover" style="overflow-x:hidden;"width: 100%">
                   <!--Cuadro 11-->
                   <v-carousel-item>
                     <v-container>

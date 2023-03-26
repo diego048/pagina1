@@ -35,6 +35,7 @@
                     hide-delimiters
                     cycle
                     interval="3000"
+                    style="height:50vh;width:100%"
                   >
                     <v-carousel-item
                       v-for="card in cards6"

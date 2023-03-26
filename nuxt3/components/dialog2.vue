@@ -550,7 +550,8 @@
         </v-card>
         </v-col>
         <dibox v-show="dialog5" @close="hideDialog6()">
-          <v-card>
+          <v-container style="overflow-x:hidden; width: 80vw">
+            <div>
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end"
                   >MINERA PODEROSA</v-card-title
@@ -566,8 +567,8 @@
                 </v-card-actions>
               </div>
               <v-divider></v-divider>
-              <v-card-text>
-                <v-carousel hide-delimiters height="auto">
+              <v-container>
+                <v-carousel hide-delimiters height="auto" style="width: 100%">
                   <!--Cuadro 11-->
                   <v-carousel-item>
                     <v-container>
@@ -781,8 +782,9 @@
                     </v-container>
                   </v-carousel-item>
                 </v-carousel>
-              </v-card-text>
-            </v-card>
+              </v-container>
+            </v-div>
+            </v-container>
         </dibox>
 
         <v-col 
@@ -822,7 +824,7 @@
               </div>
               <v-divider></v-divider>
               <v-container>
-                <v-carousel hide-delimiters height="auto" style="width:100%">
+                <v-carousel hide-delimiters height="auto" style="width:100%" show-arrows="hover">
                   <v-carousel-item>
                     <v-container>
                       <v-row>

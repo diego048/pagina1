@@ -35,7 +35,6 @@
                     hide-delimiters
                     cycle
                     interval="3000"
-                    style="width:100%;height:100%"
                   >
                     <v-carousel-item
                       v-for="card in cards6"
@@ -79,13 +78,13 @@
                     hide-delimiters
                     cycle
                     interval="3000"
-                    style="width:100%;height:100%"
                   >
                     <v-carousel-item
                       v-for="card in cards7"
                       :src="card.ima"
                       :lazy-src="card.ima"
                       :key="card.ima"
+                      
                       cover
                     ></v-carousel-item>
                   </v-carousel>
@@ -117,7 +116,6 @@
                     hide-delimiters
                     cycle
                     interval="3000"
-                    style="width:100%;height:100%"
                   >
                     <v-carousel-item
                       v-for="card in cards7"

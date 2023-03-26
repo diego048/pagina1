@@ -820,7 +820,7 @@
                 </v-card-actions>
               </div>
               <v-divider></v-divider>
-              <v-card-text>
+              <v-container>
                 <v-carousel hide-delimiters height="auto">
                   <v-carousel-item>
                     <v-container>
@@ -881,7 +881,7 @@
                     </v-container>
                   </v-carousel-item>
                 </v-carousel>
-              </v-card-text>
+              </v-container>
               </div>
         </dibox>
   </div>

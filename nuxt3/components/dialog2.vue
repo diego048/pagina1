@@ -783,7 +783,7 @@
                   </v-carousel-item>
                 </v-carousel>
               </v-container>
-            </v-div>
+            </div>
             </v-container>
         </dibox>
 

@@ -35,7 +35,7 @@
                     hide-delimiters
                     cycle
                     interval="3000"
-                    style="width:100%"
+                    style="width:100%;height:100%"
                   >
                     <v-carousel-item
                       v-for="card in cards6"
@@ -79,7 +79,7 @@
                     hide-delimiters
                     cycle
                     interval="3000"
-                    style="width:100%"
+                    style="width:100%;height:100%"
                   >
                     <v-carousel-item
                       v-for="card in cards7"
@@ -117,7 +117,7 @@
                     hide-delimiters
                     cycle
                     interval="3000"
-                    style="width:100%"
+                    style="width:100%;height:100%"
                   >
                     <v-carousel-item
                       v-for="card in cards7"

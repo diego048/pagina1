@@ -79,7 +79,7 @@
               <div v-if="!mobile"  v-show="!mobile">
           <v-btn class="link" :to="{ name: 'empresa' }" open-on-hover>
             EMPRESA
-        <v-menu open-on-hover activator="parent">
+        <v-menu open-on-hover activator="parent" v-show="!mobile">
           <v-list>
               <v-list-item
               active-color="white"
@@ -100,7 +100,7 @@
       <div  v-if="!mobile" v-show="!mobile">
           <v-btn open-on-hover  class="link" :to="{ name: 'consultoria-de-proyectos' }">
             CONSULTORÍA
-          <v-menu open-on-hover activator="parent">
+          <v-menu open-on-hover activator="parent" v-show="!mobile">
           <v-list>
             <v-list-item
               v-for="(item, index) in items"
@@ -121,7 +121,7 @@
                 EQUIPAMIENTO
                 <br />
                 WCW
-        <v-menu open-on-hover activator="parent">
+        <v-menu open-on-hover activator="parent" v-show="!mobile">
           <v-list>
             <v-list-item
             v-for="(item, index) in items2"
@@ -145,7 +145,7 @@
         <div v-if="!mobile">
           <v-btn align="center" open-on-hover v-if="state" v-show="!mobile" class="link" :to="{ name: 'proyectos' }">
                 PROYECTOS
-        <v-menu open-on-hover activator="parent">
+        <v-menu open-on-hover activator="parent" v-show="!mobile">
           <v-list>
             <v-list-item
               active-color="white"
@@ -211,11 +211,11 @@ export default defineComponent({
 
     ],
     items3: [
-      {title: "NOSOTROS", name: "empresa"},
-      {title: "STATS", name: "empresa"},
-      {title: "MISIÓN", name: "empresa#mision"},
-      {title: "VISIÓN", name: "empresa#vision"},
-      {title: "HISTORIA", name: "empresa#historia"},
+      {title: "NOSOTROS", name: "/empresa"},
+      {title: "STATS", name: "/empresa"},
+      {title: "MISIÓN", name: "/empresa#mision"},
+      {title: "VISIÓN", name: "/empresa#vision"},
+      {title: "HISTORIA", name: "/empresa#historia"},
       {title: "CONTACTANOS", name: "/#formulario"}
     ],
     items4: [

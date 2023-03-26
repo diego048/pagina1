@@ -48,7 +48,8 @@
         </v-card>
         </v-col>
         <dibox v-show="dialog0" @close="hideDialog1()">
-          <v-card>
+          <v-container style="overflow-x:hidden; width: 80vw">
+            <div>
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end">CD NESTLE</v-card-title>
                 <v-card-actions class="d-flex justify-start">
@@ -63,7 +64,7 @@
               </div>
               <v-divider></v-divider>
               <v-card-text>
-                <v-carousel hide-delimiters height="auto">
+                <v-carousel hide-delimiters height="auto" show-arrows="hover">
 
                   <!--Cuadro 2-->
                   <v-carousel-item>
@@ -73,11 +74,11 @@
                           <v-col>
                           <v-img
                               :src="p14"
-                              style="height: 35vh"
+                              style="width: 100%"
                             />
                             <v-img
                               :src="p15"
-                              style="height: 35vh"
+                             style="width: 100%"
                             />
                           </v-col>
                         </v-col>
@@ -128,11 +129,11 @@
                           <v-col>
                           <v-img
                               :src="p14"
-                              style="height: 35vh"
+                              style="width: 100%"
                             />
                             <v-img
                               :src="p15"
-                              style="height: 35vh"
+                             style="width: 100%"
                             />
                           </v-col>
                         </v-col>
@@ -147,7 +148,7 @@
                         <v-col>
                           <v-img
                             :src="p16"
-                            style="height: 80vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                       </v-row>
@@ -166,27 +167,28 @@
                         <v-col cols="12" sm="4" md="4">
                           <v-img
                             :src="p17"
-                            style="height: 60vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                         <v-col cols="12" sm="4" md="4">
                           <v-img
                             :src="p18"
-                            style="height: 60vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                         <v-col cols="12" sm="4" md="4">
                           <v-img
                             :src="p19"
-                            style="height: 60vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                       </v-row>
                     </v-container>
                   </v-carousel-item>
                 </v-carousel>
-              </v-card-text>
-            </v-card>
+              </v-container>
+              </div>
+            </v-container>
         </dibox>
         <!--SEGUNDO-->
         <v-col
@@ -212,7 +214,8 @@
         </v-card>
         </v-col>
         <dibox v-show="dialog1" @close="hideDialog2()">
-          <v-card>
+          <v-container style="overflow-x:hidden; width: 80vw">
+            <div>
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end">Medifarma</v-card-title>
                 <v-card-actions class="d-flex justify-start">
@@ -226,8 +229,8 @@
                 </v-card-actions>
               </div>
               <v-divider></v-divider>
-              <v-card-text>
-                <v-carousel hide-delimiters height="auto">
+              <v-container>
+                <v-carousel hide-delimiters height="auto" show-arrows="hover">
                   <v-carousel-item>
                     <v-container>
                       <v-row>
@@ -239,13 +242,13 @@
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p20"
-                            style="height: 60vh; min-height: 287px"
+                            style="width:100%"
                           />
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p21"
-                            style="height: 60vh; min-height: 287px"
+                             style="width:100%"
                           />
                         </v-col>
                       </v-row>
@@ -264,13 +267,13 @@
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p22"
-                            style="height: 60vh; min-height: 287px"
+                             style="width:100%"
                           />
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p23"
-                            style="height: 60vh; min-height: 287px"
+                             style="width:100%"
                           />
                         </v-col>
                       </v-row>
@@ -289,21 +292,22 @@
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p24"
-                            style="height: 60vh; min-height: 287px"
+                             style="width:100%"
                           />
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p25"
-                            style="height: 60vh; min-height: 287px"
+                             style="width:100%"
                           />
                         </v-col>
                       </v-row>
                     </v-container>
                   </v-carousel-item>
                 </v-carousel>
-              </v-card-text>
-            </v-card>
+              </v-container>
+              </div>
+            </v-container>
         </dibox>
   
         <!--TERCERO-->
@@ -318,7 +322,6 @@
           <v-img
                   :src="p26"
                   height="200px"
-                  cover
                 ></v-img>
                 <v-card-title
                   class="text-pre-wrap"
@@ -330,7 +333,8 @@
         </v-card>
         </v-col>
         <dibox v-show="dialog2" @close="hideDialog3()">
-          <v-card>
+          <v-container style="overflow-x:hidden; width: 80vw">
+            <div>
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end"
                   >SUPERMERCADOS PERUANOS</v-card-title
@@ -346,8 +350,8 @@
                 </v-card-actions>
               </div>
               <v-divider></v-divider>
-              <v-card-text>
-                <v-carousel hide-delimiters height="auto">
+              <v-container>
+                <v-carousel hide-delimiters height="auto" show-arrows="hover">
                   <v-carousel-item>
                     <v-container>
                       <v-row>
@@ -359,13 +363,13 @@
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p26"
-                            style="height: 60vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p27"
-                            style="height: 60vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                       </v-row>
@@ -390,8 +394,9 @@
                     </v-container>
                   </v-carousel-item>
                 </v-carousel>
-              </v-card-text>
-            </v-card>
+              </v-container>
+            </div>
+            </v-container>
         </dibox>
         <!--CUARTO-->
         <v-col
@@ -405,7 +410,6 @@
           <v-img
                   :src="p28"
                   height="200px"
-                  cover
                 ></v-img>
                 <v-card-title
                   class="text-pre-wrap"
@@ -417,7 +421,8 @@
         </v-card>
         </v-col>
         <dibox v-show="dialog3" @close="hideDialog4()">
-          <v-card>
+          <v-container style="overflow-x:hidden; width: 80vw">
+            <div>
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end"
                   >TIENDAS EFE</v-card-title
@@ -433,8 +438,8 @@
                 </v-card-actions>
               </div>
               <v-divider></v-divider>
-              <v-card-text>
-                <v-carousel hide-delimiters height="auto">
+              <v-container>
+                <v-carousel hide-delimiters height="auto" show-arrows="hover">
                   <v-carousel-item>
                     <v-container>
                       <v-row>
@@ -447,15 +452,16 @@
                           <v-img
                             align="center"
                             :src="p29"
-                            style="height: 60vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                       </v-row>
                     </v-container>
                   </v-carousel-item>
                 </v-carousel>
-              </v-card-text>
-            </v-card>
+              </v-container>
+             <div>
+             <v-container>
         </dibox>
         
         <!--CUARTO-->
@@ -470,7 +476,6 @@
           <v-img
                   :src="p30"
                   height="200px"
-                  cover
                 ></v-img>
                 <v-card-title
                   class="text-pre-wrap"
@@ -482,7 +487,8 @@
         </v-card>
         </v-col>
         <dibox v-show="dialog4" @close="hideDialog5()">
-          <v-card>
+          <v-container style="overflow-x:hidden; width: 80vw">
+            <div>
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end">RIPLEY</v-card-title>
                 <v-card-actions class="d-flex justify-start">
@@ -496,8 +502,8 @@
                 </v-card-actions>
               </div>
               <v-divider></v-divider>
-              <v-card-text>
-                <v-carousel hide-delimiters height="auto">
+              <v-container>
+                <v-carousel hide-delimiters height="auto" show-arrows="hover">
                   <v-carousel-item>
                     <v-container>
                       <v-row>
@@ -509,21 +515,22 @@
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p30"
-                            style="height: 60vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p31"
-                            style="height: 60vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                       </v-row>
                     </v-container>
                   </v-carousel-item>
                 </v-carousel>
-              </v-card-text>
-            </v-card>
+              </v-container>
+            </div>
+            <v-container>
         </dibox>
   
         <!--QUINTO-->

@@ -335,7 +335,7 @@
         <dibox v-show="dialog2" @close="hideDialog3()">
           <v-container style="overflow-x:hidden; width: 80vw">
             <div style="overflow-x:hidden">
-              <div class="d-flex justify-space-between">
+              <div class="d-flex justify-space-between" style="width: 80vw">
                 <v-card-title class="d-flex justify-end class text-pre-wrap" style="word-break: break-word"
                   >SUPERMERCADOS PERUANOS</v-card-title
                 >

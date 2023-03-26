@@ -49,7 +49,7 @@
         </v-col>
         <dibox v-show="dialog0" @close="hideDialog1()">
           <v-container style="overflow-x:hidden; width: 80vw">
-            <div>
+            <div style="overflow-x:hidden">
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end">CD NESTLE</v-card-title>
                 <v-card-actions class="d-flex justify-start">
@@ -64,7 +64,7 @@
               </div>
               <v-divider></v-divider>
               <v-container>
-                <v-carousel hide-delimiters height="auto" show-arrows="hover">
+                <v-carousel hide-delimiters height="auto" show-arrows="hover" style="overflow-x:hidden">
 
                   <!--Cuadro 2-->
                   <v-carousel-item>
@@ -215,7 +215,7 @@
         </v-col>
         <dibox v-show="dialog1" @close="hideDialog2()">
           <v-container style="overflow-x:hidden; width: 80vw">
-            <div>
+            <div style="overflow-x:hidden">
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end">Medifarma</v-card-title>
                 <v-card-actions class="d-flex justify-start">
@@ -230,7 +230,7 @@
               </div>
               <v-divider></v-divider>
               <v-container>
-                <v-carousel hide-delimiters height="auto" show-arrows="hover">
+                <v-carousel hide-delimiters height="auto" show-arrows="hover" style="overflow-x:hidden">
                   <v-carousel-item>
                     <v-container>
                       <v-row>
@@ -334,9 +334,9 @@
         </v-col>
         <dibox v-show="dialog2" @close="hideDialog3()">
           <v-container style="overflow-x:hidden; width: 80vw">
-            <div>
+            <div style="overflow-x:hidden">
               <div class="d-flex justify-space-between">
-                <v-card-title class="d-flex justify-end"
+                <v-card-title class="d-flex justify-end class="text-pre-wrap" style="word-break: break-word"
                   >SUPERMERCADOS PERUANOS</v-card-title
                 >
                 <v-card-actions class="d-flex justify-start">
@@ -351,7 +351,7 @@
               </div>
               <v-divider></v-divider>
               <v-container>
-                <v-carousel hide-delimiters height="auto" show-arrows="hover">
+                <v-carousel hide-delimiters height="auto" show-arrows="hover" style="overflow-x:hidden">
                   <v-carousel-item>
                     <v-container>
                       <v-row>
@@ -422,7 +422,7 @@
         </v-col>
         <dibox v-show="dialog3" @close="hideDialog4()">
           <v-container style="overflow-x:hidden; width: 80vw">
-            <div>
+            <div style="overflow-x:hidden">
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end"
                   >TIENDAS EFE</v-card-title
@@ -439,7 +439,7 @@
               </div>
               <v-divider></v-divider>
               <v-container>
-                <v-carousel hide-delimiters height="auto" show-arrows="hover">
+                <v-carousel hide-delimiters height="auto" show-arrows="hover" style="overflow-x:hidden">
                   <v-carousel-item>
                     <v-container>
                       <v-row>
@@ -488,7 +488,7 @@
         </v-col>
         <dibox v-show="dialog4" @close="hideDialog5()">
           <v-container style="overflow-x:hidden; width: 80vw">
-            <div>
+            <div style="overflow-x:hidden">
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end">RIPLEY</v-card-title>
                 <v-card-actions class="d-flex justify-start">
@@ -503,7 +503,7 @@
               </div>
               <v-divider></v-divider>
               <v-container>
-                <v-carousel hide-delimiters height="auto" show-arrows="hover">
+                <v-carousel hide-delimiters height="auto" show-arrows="hover" style="overflow-x:hidden">
                   <v-carousel-item>
                     <v-container>
                       <v-row>
@@ -558,7 +558,7 @@
         </v-col>
         <dibox v-show="dialog5" @close="hideDialog6()">
           <v-container style="overflow-x:hidden; width: 80vw">
-            <div>
+            <div style="overflow-x:hidden">
               <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end"
                   >MINERA PODEROSA</v-card-title
@@ -575,7 +575,7 @@
               </div>
               <v-divider></v-divider>
               <v-container>
-                <v-carousel hide-delimiters height="auto" style="width: 100%" show-arrows="hover">
+                <v-carousel hide-delimiters height="auto" style="width: 100%" show-arrows="hover" style="overflow-x:hidden">
                   <!--Cuadro 11-->
                   <v-carousel-item>
                     <v-container>

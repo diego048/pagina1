@@ -530,7 +530,7 @@
                 </v-carousel>
               </v-container>
             </div>
-            <v-container>
+            </v-container>
         </dibox>
   
         <!--QUINTO-->

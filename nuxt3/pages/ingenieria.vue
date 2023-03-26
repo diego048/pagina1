@@ -421,7 +421,7 @@
         <div v-for="card in cards3">
         <dibox v-show="card.show" @close="hideDialog(card)">
                           <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
-                        <div style="position: relative">
+                        <div style="position: relative;width: 80vw">
                           <v-img
                             style="height: 80vh; width: 100%"
                             :src="card.src"
@@ -445,7 +445,7 @@
       </div>
                      <dibox v-show="show1" @close="hideDialog1()">
                            <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
-                            <div style="position: relative">
+                            <div style="position: relative;width: 80vw">
                             <v-img
                             style="height: 80vh; ; width: 100%"
                             :src="p6"
@@ -476,7 +476,7 @@
                             >
                             </v-img>
                             <v-img
-                                class="dd-flex d-sm-none"
+                                class="d-flex d-sm-none"
                                 style="height: 100%; width: 90vw"
                                 :src="p7"
                                 :lazy-src="p7"

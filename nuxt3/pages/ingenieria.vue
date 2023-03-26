@@ -404,7 +404,6 @@
                 <h1>Simuladores para Picking</h1>
                 <br />
                 <br />
-                <br />
                 <v-card @click="showDialog2()" elevation="21" align="center" style="width: 100%"  v-scrolls>
                 <v-img
                         height="300px"

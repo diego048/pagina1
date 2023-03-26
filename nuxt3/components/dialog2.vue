@@ -335,11 +335,12 @@
         <dibox v-show="dialog2" @close="hideDialog3()">
           <v-container style="overflow-x:hidden; width: 80vw">
             <div style="overflow-x:hidden">
-              <div style="width: 80vw">
                 <div class="d-flex justify-space-between">
-                  <v-card-title class="d-flex justify-end class text-pre-wrap" style="word-break: break-word"
+                  <div class="text-pre-wrap" style="word-break: break-word">
+                  <v-card-title class="d-flex justify-end text-pre-wrap" style="word-break: break-word"
                     >SUPERMERCADOS PERUANOS</v-card-title
                   >
+                  </div>
                   <v-card-actions class="d-flex justify-start">
                     <v-btn
                       style="color: rgb(203, 50, 52)"
@@ -350,7 +351,6 @@
                     </v-btn>
                   </v-card-actions>
                 </div>
-               </div>
               <v-divider></v-divider>
               <v-container>
                 <v-carousel hide-delimiters height="auto" show-arrows="hover" style="overflow-x:hidden">

@@ -1,7 +1,7 @@
 <template>
     <transition name="fade" appear>
       <div class="dialog-overlay" @click="$emit('close')">
-        <div class="dialog-box" @click.stop>
+        <div class="dialog-box" @click.stop style="overflow-x: hidden">
           <slot></slot>
         </div>
       </div>

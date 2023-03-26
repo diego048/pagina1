@@ -806,7 +806,7 @@
       </v-row>
     </v-container>
     <dibox v-show="dialog" @close="hideDialog()">
-      <v-container>
+      <v-container style="overflow-x:hidden">
         <div style="width:90vw">
           <div class="d-flex justify-space-between">
                 <v-card-title class="d-flex justify-end">CD GLORIA</v-card-title>
@@ -883,8 +883,8 @@
                   </v-carousel-item>
                 </v-carousel>
               </v-container>
-              </v-container>
               </div>
+              </v-container>
         </dibox>
   </div>
   </template>

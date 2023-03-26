@@ -35,7 +35,7 @@
                     hide-delimiters
                     cycle
                     interval="3000"
-                    class="h-auto"
+                    style="width:100%"
                   >
                     <v-carousel-item
                       v-for="card in cards6"
@@ -72,7 +72,7 @@
                 <v-col
                   cols="12"
                   sm="6"
-                  style="height: 50vh; min-height: 287px"
+                  style="min-height: 287px"
                   class="d-flex d-sm-none"
                 >
                 <v-carousel
@@ -80,7 +80,7 @@
                     hide-delimiters
                     cycle
                     interval="3000"
-                    class="h-auto"
+                    style="width:100%"
                   >
                     <v-carousel-item
                       v-for="card in cards7"
@@ -111,7 +111,7 @@
                 <v-col
                   cols="12"
                   sm="6"
-                  style="height: 50vh; min-height: 287px"
+                  style="min-height: 287px"
                   class="d-none d-sm-flex"
                 >
                   <v-carousel
@@ -119,7 +119,7 @@
                     hide-delimiters
                     cycle
                     interval="3000"
-                    style="height: 100%"
+                    style="width:100%"
                   >
                     <v-carousel-item
                       v-for="card in cards7"

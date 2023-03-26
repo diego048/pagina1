@@ -568,7 +568,7 @@
               </div>
               <v-divider></v-divider>
               <v-container>
-                <v-carousel hide-delimiters height="auto" style="width: 100%">
+                <v-carousel hide-delimiters height="auto" style="width: 100%" show-arrows="hover">
                   <!--Cuadro 11-->
                   <v-carousel-item>
                     <v-container>
@@ -581,13 +581,13 @@
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p33"
-                            style="height: 30vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p34"
-                            style="height: 30vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                       </v-row>
@@ -595,7 +595,7 @@
                         <v-col cols="12">
                           <v-img
                             :src="p35"
-                            style="height: 30vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                       </v-row>
@@ -611,7 +611,7 @@
                           <br />
                           <v-img
                             :src="p36"
-                            style="height: 65vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
@@ -620,7 +620,7 @@
                           </h2>
                           <v-img
                             :src="p37"
-                            style="height: 60vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                         <v-col cols="12" sm="12" md="4">
@@ -629,7 +629,7 @@
                           </h2>
                           <v-img
                             :src="p38"
-                            style="height: 60vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                       </v-row>
@@ -642,13 +642,13 @@
                       <v-row>
                         <v-col cols="12" sm="6" md="6">
                           <h2 align="center">Losa SuperPlana</h2>
-                          <video controls style="width: 100%; height: 60vh">
+                          <video controls style="width: 100%">
                             <source :src="p3" type="video/mp4" />
                           </video>
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
                           <h2 align="center">Montaje de Almacén Autoportante</h2>
-                          <video controls style="width: 100%; height: 60vh">
+                          <video controls style="width: 100%">
                             <source :src="p4" type="video/mp4" />
                           </video>
                         </v-col>
@@ -662,7 +662,7 @@
                       <v-row>
                         <v-col cols="12" sm="6" md="6">
                           <h2 align="center">Montaje de oficinas modulares</h2>
-                          <video controls style="width: 100%; height: 60vh">
+                          <video controls style="width: 100%">
                             <source :src="p5" type="video/mp4" />
                           </video>
                         </v-col>
@@ -670,7 +670,7 @@
                           <h2 align="center">Cerramiento fachada</h2>
                           <br class="d-none d-sm-flex d-md-none" />
                           <br class="d-none d-sm-flex d-md-none" />
-                          <video controls style="width: 100%; height: 60vh">
+                          <video controls style="width: 100%">
                             <source :src="p6" type="video/mp4" />
                           </video>
                         </v-col>
@@ -684,19 +684,19 @@
                       <v-row>
                         <v-col cols="12" sm="4" md="4">
                           <h2 align="center">Montaje cantiléver</h2>
-                          <video controls style="width: 100%; height: 60vh">
+                          <video controls style="width: 100%">
                             <source :src="p7" type="video/mp4" />
                           </video>
                         </v-col>
                         <v-col cols="12" sm="4" md="4">
                           <h2 align="center">Montaje de tijerales</h2>
-                          <video controls style="width: 100%; height: 60vh">
+                          <video controls style="width: 100%">
                             <source :src="p8" type="video/mp4" />
                           </video>
                         </v-col>
                         <v-col cols="12" sm="4" md="4">
                           <h2 align="center">Montaje de cubierta</h2>
-                          <video controls style="width: 100%; height: 60vh">
+                          <video controls style="width: 100%">
                             <source :src="p9" type="video/mp4" />
                           </video>
                         </v-col>
@@ -710,13 +710,13 @@
                       <v-row>
                         <v-col cols="12" sm="6" md="6">
                           <h2 align="center">interiores</h2>
-                          <video controls style="width: 100%; height: 60vh">
+                          <video controls style="width: 100%">
                             <source :src="p10" type="video/mp4" />
                           </video>
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
                           <h2 align="center">Patio Anexo</h2>
-                          <video controls style="width: 100%; height: 60vh">
+                          <video controls style="width: 100%">
                             <source :src="p11" type="video/mp4" />
                           </video>
                         </v-col>
@@ -736,13 +736,13 @@
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p39"
-                            style="height: 30vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p40"
-                            style="height: 30vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                       </v-row>
@@ -750,7 +750,7 @@
                         <v-col cols="12">
                           <v-img
                             :src="p41"
-                            style="height: 30vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                       </v-row>
@@ -769,13 +769,13 @@
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p42"
-                            style="height: 60vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
                           <v-img
                             :src="p32"
-                            style="height: 60vh; min-height: 287px"
+                            style="width: 100%"
                           />
                         </v-col>
                       </v-row>

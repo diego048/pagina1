@@ -819,7 +819,7 @@
                 </v-card-actions>
               </div>
               <v-divider></v-divider>
-              <v-card-text>
+              <v-card-text style="width: 90vw">
                 <v-carousel hide-delimiters height="auto">
                   <v-carousel-item>
                     <v-container>

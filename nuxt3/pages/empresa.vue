@@ -122,6 +122,7 @@
                 <br />
                 <h1 style="overflow-wrap: break-word">HISTORIA</h1>
                 <h3 align="center">BenchMark</h3>
+                <v-container>
                 <v-timeline align="start">
                   <v-timeline-item>
                     <template v-slot:opposite> 1998 </template>
@@ -180,6 +181,7 @@
                     </div>
                   </v-timeline-item>
                 </v-timeline>
+                </v-container>
               </v-card>
             </v-col>
           </v-row>

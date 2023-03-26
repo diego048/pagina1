@@ -420,10 +420,10 @@
         <br />
         <div v-for="card in cards3">
         <dibox v-show="card.show" @close="hideDialog(card)">
-                          <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
+                          <v-card outlined elevation="0">
                         <div style="position: relative;width: 80vw">
                           <v-img
-                            style="height: 80vh; width: 100%"
+                            style="height: 100%; width: 100%"
                             :src="card.src"
                             :lazy-src="card.src"
                           >
@@ -444,10 +444,10 @@
         </div>
       </div>
                      <dibox v-show="show1" @close="hideDialog1()">
-                           <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
+                           <v-card outlined elevation="0">
                             <div style="position: relative;width: 80vw">
                             <v-img
-                            style="height: 80vh; ; width: 100%"
+                            style="height: 100%; ; width: 100%"
                             :src="p6"
                             :lazy-src="p6"
                           >
@@ -466,11 +466,11 @@
                         </v-card>
                 </dibox>
                 <dibox v-show="show2" @close="hideDialog2()">
-                           <v-card color="rgba(0,0,0,0.45)" outlined elevation="0">
-                            <div style="position: relative">
+                           <v-card outlined elevation="0">
+                            <div style="position: relative;width: 80vw">
                             <v-img
                                 class="d-none d-sm-flex"
-                                style="height: 100%; width: 60vw"
+                                style="height: 100%; width: 100%"
                                 :src="p7"
                                 :lazy-src="p7"
                             >

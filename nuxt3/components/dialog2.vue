@@ -63,7 +63,7 @@
                 </v-card-actions>
               </div>
               <v-divider></v-divider>
-              <v-card-text>
+              <v-container>
                 <v-carousel hide-delimiters height="auto" show-arrows="hover">
 
                   <!--Cuadro 2-->
@@ -460,8 +460,8 @@
                   </v-carousel-item>
                 </v-carousel>
               </v-container>
-             <div>
-             <v-container>
+             </div>
+             </v-container>
         </dibox>
         
         <!--CUARTO-->

@@ -76,7 +76,7 @@
           </v-btn>
       </div>
       
-              <div v-if="!mobile1">
+              <div v-if="!mobile">
           <v-btn class="link" :to="{ name: 'empresa' }" v-show="!mobile" open-on-hover>
             EMPRESA
         <v-menu open-on-hover activator="parent">
@@ -97,7 +97,7 @@
         </v-btn>
       </div>
       
-      <div  v-if="!mobile1">
+      <div  v-if="!mobile">
           <v-btn open-on-hover v-show="!mobile" class="link" :to="{ name: 'consultoria-de-proyectos' }">
             CONSULTORÍA
           <v-menu open-on-hover activator="parent">
@@ -116,7 +116,7 @@
         </v-menu>
       </v-btn>
       </div>
-      <div v-if="!mobile1">
+      <div v-if="!mobile">
         <v-btn align="center" open-on-hover v-show="!mobile" class="link" :to="{ name: 'equipos' }">
                 EQUIPAMIENTO
                 <br />
@@ -142,7 +142,7 @@
             Login
         </v-btn>
         
-        <div v-if="!mobile1">
+        <div v-if="!mobile">
           <v-btn align="center" open-on-hover v-if="state" v-show="!mobile" class="link" :to="{ name: 'proyectos' }">
                 PROYECTOS
         <v-menu open-on-hover activator="parent">

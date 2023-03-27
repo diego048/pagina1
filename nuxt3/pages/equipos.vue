@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="false">
     <div cover id="background">
         <v-container>
           <v-row>

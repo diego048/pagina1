@@ -121,10 +121,6 @@
         </v-menu>
       </div>
       <div v-if="!mobile" v-show="!mobile">
-        <v-btn align="center" open-on-hover v-show="!mobile" class="link" :to="{ name: 'equipos' }">
-                EQUIPAMIENTO
-                <br />
-                WCW
         <v-menu open-on-hover activator="parent" v-show="!mobile">
         <template v-slot:activator="{ props }">
               <v-btn class="link" :to="{ name: 'equipos' }" open-on-hover v-show="!mobile">

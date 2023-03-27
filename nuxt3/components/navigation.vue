@@ -219,11 +219,11 @@ export default defineComponent({
 
     ],
     items3: [
-      {title: "NOSOTROS", name: "/empresa"},
-      {title: "STATS", name: "/empresa"},
-      {title: "MISIÓN", name: "/empresa#mision"},
-      {title: "VISIÓN", name: "/empresa#vision"},
-      {title: "HISTORIA", name: "/empresa#historia"},
+      {title: "NOSOTROS", name: "empresa"},
+      {title: "STATS", name: "empresa"},
+      {title: "MISIÓN", name: "empresa#mision"},
+      {title: "VISIÓN", name: "empresa#vision"},
+      {title: "HISTORIA", name: "empresa#historia"},
       {title: "CONTACTANOS", name: "/#formulario"}
     ],
     items4: [

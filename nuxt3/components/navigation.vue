@@ -70,6 +70,7 @@
         </v-app-bar-title>
       </div>
         <v-spacer></v-spacer>
+        <div v-show="!mobile">
         <div>
           <v-btn class="link" :to="{ name: 'index' }" v-show="!mobile">
             Inicio
@@ -172,6 +173,7 @@
       <v-btn v-if="state" @click="logout" class="link" v-show="!mobile">
         log out
       </v-btn>
+      </div>
         
       </v-app-bar>
       <v-main>

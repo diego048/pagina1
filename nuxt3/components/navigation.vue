@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-layout>        
+    <v-layout v-if="false">        
       <v-navigation-drawer v-model="drawer" app>
         <v-img
           class="mx-2"

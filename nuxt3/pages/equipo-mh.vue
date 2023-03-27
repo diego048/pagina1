@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="false">
         <v-container>
           <v-row>
             <v-col cols="12" sm="12" md="4" class="align-self-center">

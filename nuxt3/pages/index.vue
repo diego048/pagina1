@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="activador">
     <!-- imagen de cabecera -->
     <v-lazy :options="{ threshold: 0.5 }">
     <div style="position: relative">
@@ -62,12 +62,12 @@
     </div>
     <br />
     <h1 align="center" style="color: blue">CONTACTO</h1>
+     </v-lazy>
     <div>
       <v-container>
         <v-img :src="ima1" style="height: 500px" cover></v-img>
       </v-container>
     </div>
-    </v-lazy>
     <br />
     <v-lazy :options="{ threshold: 0.5 }">
     <InicioForm id="formulario" />
@@ -83,9 +83,13 @@
 <script>
 import imagen1 from "../assets/imagenes/imagen30.png";
 export default {
+beforeMount(){
+      this.activador = true
+    },
   data () {
     return {
-      ima1: imagen1
+      ima1: imagen1,
+      activador:false,
     }
   }
 }

@@ -70,7 +70,6 @@
         </v-app-bar-title>
       </div>
         <v-spacer></v-spacer>
-        <div v-show="!mobile">
         <div>
           <v-btn class="link" :to="{ name: 'index' }" v-show="!mobile">
             Inicio
@@ -78,9 +77,12 @@
       </div>
       
               <div v-if="!mobile"  v-show="!mobile">
-          <v-btn class="link" :to="{ name: 'empresa' }" open-on-hover>
-            EMPRESA
         <v-menu open-on-hover activator="parent" v-show="!mobile">
+           <template v-slot:activator="{ props }">
+              <v-btn class="link" :to="{ name: 'empresa' }" open-on-hover v-show="!mobile"  open-on-hover>
+                 EMPRESA
+              </v-btn>
+           </template>
           <v-list>
               <v-list-item
               active-color="white"
@@ -95,13 +97,15 @@
               </v-list-item>
           </v-list>
         </v-menu>
-        </v-btn>
       </div>
       
       <div  v-if="!mobile" v-show="!mobile">
-          <v-btn open-on-hover  class="link" :to="{ name: 'consultoria-de-proyectos' }">
-            CONSULTORÍA
           <v-menu open-on-hover activator="parent" v-show="!mobile">
+          <template v-slot:activator="{ props }">
+              <v-btn class="link" :to="{ name: 'consultoria-de-proyectos' }" open-on-hover v-show="!mobile"  open-on-hover>
+                 CONSULTORÍA
+              </v-btn>
+           </template>
           <v-list>
             <v-list-item
               v-for="(item, index) in items"
@@ -115,7 +119,6 @@
             </v-list-item>
           </v-list>
         </v-menu>
-      </v-btn>
       </div>
       <div v-if="!mobile" v-show="!mobile">
         <v-btn align="center" open-on-hover v-show="!mobile" class="link" :to="{ name: 'equipos' }">
@@ -123,6 +126,13 @@
                 <br />
                 WCW
         <v-menu open-on-hover activator="parent" v-show="!mobile">
+        <template v-slot:activator="{ props }">
+              <v-btn class="link" :to="{ name: 'equipos' }" open-on-hover v-show="!mobile"  open-on-hover>
+                 EQUIPAMIENTO
+                <br />
+                WCW
+              </v-btn>
+           </template>
           <v-list>
             <v-list-item
             v-for="(item, index) in items2"
@@ -136,7 +146,6 @@
             </v-list-item>  
           </v-list>
         </v-menu>
-      </v-btn>
       </div>
 
         <v-btn class="link" :to="{ name: 'login' }" v-if="!state" v-show="!mobile">
@@ -144,9 +153,14 @@
         </v-btn>
         
         <div v-if="!mobile">
-          <v-btn align="center" open-on-hover v-if="state" v-show="!mobile" class="link" :to="{ name: 'proyectos' }">
-                PROYECTOS
         <v-menu open-on-hover activator="parent" v-show="!mobile">
+                <template v-slot:activator="{ props }">
+              <v-btn class="link" :to="{ name: 'proyectos' }" open-on-hover v-show="!mobile"  open-on-hover>
+                 PROYECTOS
+                <br />
+                WCW
+              </v-btn>
+           </template>
           <v-list>
             <v-list-item
               active-color="white"
@@ -161,7 +175,6 @@
             </v-list-item>  
           </v-list>
         </v-menu>
-        </v-btn>
       </div>
 
        <v-btn align="center" class="link" :to="{ name: 'logicorp-news' }"  v-if="state" v-show="!mobile">  
@@ -173,7 +186,6 @@
       <v-btn v-if="state" @click="logout" class="link" v-show="!mobile">
         log out
       </v-btn>
-      </div>
         
       </v-app-bar>
       <v-main>

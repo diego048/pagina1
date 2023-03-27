@@ -1,7 +1,7 @@
 <template>
   <div v-if="activador">
     <!-- imagen de cabecera -->
-    <v-lazy :options="{ threshold: 0.5 }">
+    <v-lazy :options="{ threshold: 0.5 }" v-if="false">
     <div style="position: relative">
       <video autoplay loop muted playsinline class="video">
         <source src="../assets/imagenes/logicorp1.mp4" type="video/webm" />
@@ -14,18 +14,18 @@
       </v-container>
     </div>
     </v-lazy>
-    <v-lazy :options="{ threshold: 0.5 }">
+    <v-lazy :options="{ threshold: 0.5 }" v-if="false">
     <div cover id="background">
       <InicioSegundoco />
     </div>
     </v-lazy>
-    <v-lazy :options="{ threshold: 0.5 }">
+    <v-lazy :options="{ threshold: 0.5 }" v-if="false">
     <div style="background-color: rgba(215, 86, 0, 0.92)">
       <InicioContador />
     </div>
     </v-lazy>
     <br />
-    <v-lazy :options="{ threshold: 0.5 }">
+    <v-lazy :options="{ threshold: 0.5 }" v-if="false">
     <v-container>
       <h1
         style="color: blue; font-size: 300%; font-family: Verdana, sans-serif"
@@ -39,7 +39,7 @@
     </NuxtLink>
     </v-lazy>
     <br />
-    <v-lazy :options="{ threshold: 0.5 }">
+    <v-lazy :options="{ threshold: 0.5 }" v-if="false">
     <NuxtLink :to="{ name: 'equipos' }" style="text-decoration: none">
       <InicioParrafoi1 />
     </NuxtLink>
@@ -47,7 +47,7 @@
     
     <br />
     <!--</div>-->
-    <v-lazy :options="{ threshold: 0.5 }">
+    <v-lazy :options="{ threshold: 0.5 }" v-if="false">
     <div
       cover
       id="background1"
@@ -69,14 +69,12 @@
       </v-container>
     </div>
     <br />
-    <v-lazy :options="{ threshold: 0.5 }">
+    <v-lazy :options="{ threshold: 0.5 }" v-if="false">
     <InicioForm id="formulario" />
     </v-lazy>
     <br />
     <!-- Pie de pagina -->
-    <v-lazy :options="{ threshold: 0 }">
     <pie />
-    </v-lazy>
   </div>
 </template>
 

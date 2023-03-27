@@ -67,10 +67,10 @@
   import { defineAsyncComponent } from "vue";
   const consultoria = defineAsyncComponent(() => import("./consulotira-de-proyectos.vue")) 
   export default {
-    setup(){
-      components: {
+    components: {
         consultoria
       },
+    setup(){
       useHead({
         title: "Consultoria de proyectos",
         meta: [

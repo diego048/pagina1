@@ -64,12 +64,7 @@
   import imagen2 from "../assets/imagenes/diseño5.png";
   import imagen3 from "../assets/imagenes/proyecto54.jpg";
   import ima1_op from "../assets/imagenes/imagen17-opti.jpg";
-  import { defineAsyncComponent } from "vue";
-  const consultoria = defineAsyncComponent(() => import("../consulotira-de-proyectos.vue"));
   export default {
-    components: {
-        consultoria
-      },
     setup(){
       useHead({
         title: "Consultoria de proyectos",

@@ -79,7 +79,7 @@
               <div v-if="!mobile"  v-show="!mobile">
         <v-menu open-on-hover activator="parent" v-show="!mobile">
            <template v-slot:activator="{ props }">
-              <v-btn class="link" :to="{ name: 'empresa' }" open-on-hover v-show="!mobile"  open-on-hover>
+              <v-btn class="link" :to="{ name: 'empresa' }" open-on-hover v-show="!mobile" >
                  EMPRESA
               </v-btn>
            </template>
@@ -102,7 +102,7 @@
       <div  v-if="!mobile" v-show="!mobile">
           <v-menu open-on-hover activator="parent" v-show="!mobile">
           <template v-slot:activator="{ props }">
-              <v-btn class="link" :to="{ name: 'consultoria-de-proyectos' }" open-on-hover v-show="!mobile"  open-on-hover>
+              <v-btn class="link" :to="{ name: 'consultoria-de-proyectos' }" open-on-hover v-show="!mobile" >
                  CONSULTORÍA
               </v-btn>
            </template>
@@ -127,7 +127,7 @@
                 WCW
         <v-menu open-on-hover activator="parent" v-show="!mobile">
         <template v-slot:activator="{ props }">
-              <v-btn class="link" :to="{ name: 'equipos' }" open-on-hover v-show="!mobile"  open-on-hover>
+              <v-btn class="link" :to="{ name: 'equipos' }" open-on-hover v-show="!mobile">
                  EQUIPAMIENTO
                 <br />
                 WCW
@@ -155,7 +155,7 @@
         <div v-if="!mobile">
         <v-menu open-on-hover activator="parent" v-show="!mobile">
                 <template v-slot:activator="{ props }">
-              <v-btn class="link" :to="{ name: 'proyectos' }" open-on-hover v-show="!mobile"  open-on-hover>
+              <v-btn class="link" :to="{ name: 'proyectos' }" open-on-hover v-show="!mobile" >
                  PROYECTOS
                 <br />
                 WCW

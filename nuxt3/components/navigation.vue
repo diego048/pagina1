@@ -151,10 +151,8 @@
         <div v-if="!mobile">
         <v-menu open-on-hover activator="parent" v-show="!mobile">
                 <template v-slot:activator="{ props }">
-              <v-btn class="link" :to="{ name: 'proyectos' }" open-on-hover v-show="!mobile" >
+              <v-btn  v-if="state" class="link" :to="{ name: 'proyectos' }" open-on-hover v-show="!mobile" >
                  PROYECTOS
-                <br />
-                WCW
               </v-btn>
            </template>
           <v-list>

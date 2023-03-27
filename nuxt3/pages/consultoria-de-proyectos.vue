@@ -59,7 +59,7 @@
     </div>
   </template>
   
-  <script lang="ts">
+  <script>
   import imagen1 from "../assets/imagenes/imagen19.jpg";
   import imagen2 from "../assets/imagenes/diseño5.png";
   import imagen3 from "../assets/imagenes/proyecto54.jpg";

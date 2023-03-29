@@ -42,12 +42,12 @@
                 <v-card @click="showDialog(card)" elevation="21" align="center" style="width: 100%"  v-scrolls>
                     <v-img :src="card.src" height="200px" cover></v-img>
                     <v-card-title
-                        class="text-pre-wrap"
+                        class="text-pre-wrap d-none d-sm-flex"
                         style="word-break: break-word"
                     >
                         {{ card.title }}
                     </v-card-title>
-
+                    <h2 class="d-flex d-sm-none"> {{ card.title }}</h2>
                     <v-card-subtitle> más info </v-card-subtitle>
                 </v-card>                
                 <dibox v-show="card.show" @close="hideDialog(card)">
@@ -118,12 +118,12 @@
                 <v-card @click="showDialog(card)" elevation="21" align="center" style="width: 100%" v-scrolls>
                     <v-img :src="card.src" height="200px" cover></v-img>
                     <v-card-title
-                        class="text-pre-wrap"
+                        class="text-pre-wrap d-none d-sm-flex"
                         style="word-break: break-word"
                     >
                         {{ card.title }}
                     </v-card-title>
-
+                    <h2 class="d-flex d-sm-none"> {{ card.title }}</h2>
                     <v-card-subtitle> más info </v-card-subtitle>
                 </v-card>                
                 <dibox v-show="card.show" @close="hideDialog(card)">
@@ -190,12 +190,12 @@
                 <v-card @click="showDialog(card)" elevation="21" align="center" style="width: 100%" v-scrolls>
                     <v-img :src="card.src" height="200px" cover></v-img>
                     <v-card-title
-                        class="text-pre-wrap"
+                        class="text-pre-wrap d-none d-sm-flex"
                         style="word-break: break-word"
                     >
                         {{ card.title }}
                     </v-card-title>
-
+                    <h2 class="d-flex d-sm-none"> {{ card.title }}</h2>
                     <v-card-subtitle> más info </v-card-subtitle>
                 </v-card>                
                 <dibox v-show="card.show" @close="hideDialog(card)">

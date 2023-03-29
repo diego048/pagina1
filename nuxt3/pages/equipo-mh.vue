@@ -1,5 +1,5 @@
 <template>
-    <div v-if="false">
+    <div>
         <v-container>
           <v-row>
             <v-col cols="12" sm="12" md="4" class="align-self-center">
@@ -49,12 +49,12 @@
                 <v-card @click="showDialog(card)" elevation="21" align="center" style="width: 100%"  v-scrolls>
                     <v-img :src="card.p3" height="200px"></v-img>
                     <v-card-title
-                        class="text-pre-wrap"
+                        class="text-pre-wrap d-none d-sm-flex"
                         style="word-break: break-word"
                     >
                         {{ card.p1 }}
                     </v-card-title>
-
+                    <h2 class="d-flex d-sm-none"> {{ card.title }}</h2>
                     <v-card-subtitle> más info </v-card-subtitle>
                 </v-card>                
                 <dibox v-show="card.show" @close="hideDialog(card)">

@@ -56,12 +56,12 @@
                 style="background-color: rgb(246, 246, 246)"
               ></v-img>
               <v-card-title
-                class="text-pre-wrap"
+                class="text-pre-wrap d-none d-sm-flex"
                 style="word-break: break-word"
               >
                 {{ card.title }}
               </v-card-title>
-
+              <h2 class="d-flex d-sm-none"> {{ card.title }}</h2>
               <v-card-subtitle> Más info </v-card-subtitle>
             </v-card>
           </NuxtLink>

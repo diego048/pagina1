@@ -70,13 +70,13 @@
         </v-app-bar-title>
       </div>
         <v-spacer></v-spacer>
-        <div>
+        <div class="d-none d-sm-flex">
           <v-btn class="link" :to="{ name: 'index' }" v-show="!mobile">
             Inicio
           </v-btn>
       </div>
       
-              <div v-if="!mobile"  v-show="!mobile">
+              <div v-if="!mobile"  v-show="!mobile" class="d-none d-sm-flex">
         <v-menu open-on-hover activator="parent" v-show="!mobile">
            <template v-slot:activator="{ props }">
               <v-btn class="link" :to="{ name: 'empresa' }" open-on-hover v-show="!mobile" >
@@ -99,7 +99,7 @@
         </v-menu>
       </div>
       
-      <div  v-if="!mobile" v-show="!mobile">
+      <div  v-if="!mobile" v-show="!mobile" class="d-none d-sm-flex">
           <v-menu open-on-hover activator="parent" v-show="!mobile">
           <template v-slot:activator="{ props }">
               <v-btn class="link" :to="{ name: 'consultoria-de-proyectos' }" open-on-hover v-show="!mobile" >
@@ -120,7 +120,7 @@
           </v-list>
         </v-menu>
       </div>
-      <div v-if="!mobile" v-show="!mobile">
+      <div v-if="!mobile" v-show="!mobile" class="d-none d-sm-flex">
         <v-menu open-on-hover activator="parent" v-show="!mobile">
         <template v-slot:activator="{ props }">
               <v-btn class="link" :to="{ name: 'equipos' }" open-on-hover v-show="!mobile">
@@ -143,12 +143,13 @@
           </v-list>
         </v-menu>
       </div>
-
+      <div class="d-none d-sm-flex">
         <v-btn class="link" :to="{ name: 'login' }" v-if="!state" v-show="!mobile">
             Login
         </v-btn>
+      </div>
         
-        <div v-if="!mobile">
+        <div v-if="!mobile" class="d-none d-sm-flex">
         <v-menu open-on-hover activator="parent" v-show="!mobile">
                 <template v-slot:activator="{ props }">
               <v-btn  v-if="state" class="link" :to="{ name: 'proyectos' }" open-on-hover v-show="!mobile" >
@@ -170,16 +171,19 @@
           </v-list>
         </v-menu>
       </div>
-
+      <div class="d-none d-sm-flex">
        <v-btn align="center" class="link" :to="{ name: 'logicorp-news' }"  v-if="state" v-show="!mobile">  
           Logicorp
           <br />
           News
         </v-btn>
+    </div>
 
+    <div class="d-none d-sm-flex">
       <v-btn v-if="state" @click="logout" class="link" v-show="!mobile">
         log out
       </v-btn>
+     </div>
         
       </v-app-bar>
       <v-main>

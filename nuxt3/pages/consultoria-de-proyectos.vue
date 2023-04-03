@@ -1,5 +1,5 @@
 <template>
-    <div vif="false">
+    <div>
       <div class="contenedor">
         <v-img
           cover

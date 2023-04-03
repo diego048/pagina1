@@ -64,7 +64,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import imagen1 from "../assets/imagenes/imagen30.png";
 import { defineComponent } from "vue";
 export default defineComponent ({

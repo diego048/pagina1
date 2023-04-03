@@ -1,5 +1,5 @@
 <template>
-    <div style="overflow-x:hidden" v-if="false">
+    <div style="overflow-x:hidden">
       <div>
         <!-- La cabecera con la info-->
         <div position="relative">

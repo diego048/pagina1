@@ -1,12 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { fileURLToPath } from 'node:url'
 export default defineNuxtConfig({
-      server: {
-        https: {
-          key: fs.readFileSync(fileURLToPath(new URL('./server.key', import.meta.url))),
-          cert: fs.readFileSync(fileURLToPath(new URL('./server.crt', import.meta.url)))
-        }
-      },
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' },
       { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css' },

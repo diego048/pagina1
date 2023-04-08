@@ -20,6 +20,7 @@ import { VDivider } from 'vuetify/components/VDivider'
 import { VLayout } from 'vuetify/components/VLayout'
 import { VNavigationDrawer } from 'vuetify/components/VNavigationDrawer'
 import { VList } from 'vuetify/components/VList'
+import { VListItemTitle } from 'vuetify/components/VList'
 import { VListItem } from 'vuetify/components/VList'
 import { VAppBar } from 'vuetify/components/VAppBar'
 import { VAppBarNavIcon } from 'vuetify/components/VAppBar'
@@ -41,6 +42,7 @@ import { VIcon } from 'vuetify/components/VIcon'
 export default defineNuxtPlugin(nuxtApp => {
     const vuetify = createVuetify({
         components: {
+            VListItemTitle,
             VIcon,
             VAvatar,
             VCard,

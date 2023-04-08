@@ -36,10 +36,12 @@ import { VAlert } from 'vuetify/components/VAlert'
 import { VTimeline } from 'vuetify/components/VTimeline'
 import { VTimelineItem } from 'vuetify/components/VTimeline'
 import { VTable } from 'vuetify/components/VTable'
+import { VIcon } from 'vuetify/components/VIcon'
 
 export default defineNuxtPlugin(nuxtApp => {
     const vuetify = createVuetify({
         components: {
+            VIcon,
             VAvatar,
             VCard,
             VTabs,

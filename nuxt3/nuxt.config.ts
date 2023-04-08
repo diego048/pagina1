@@ -1,6 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { fileURLToPath } from 'node:url'
+import vuetify from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
+      modules: [
+        async (options, nuxt) => {
+          nuxt.hooks.hook('vite:extendConfig', config => config.plugins.push(
+            vuetify()
+          ))
+        }
+      ],
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' },
       { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css' },
@@ -13,6 +20,7 @@ export default defineNuxtConfig({
     build: {
         transpile: ['vuetify']
     },
+    vite: { ssr: { noExternal: ["vuetify"] } },
     app: {
         pageTransition: { name: 'page', mode: 'out-in' },
         head: {

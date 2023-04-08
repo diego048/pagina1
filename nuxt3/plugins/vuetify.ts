@@ -1,5 +1,6 @@
 import {createVuetify} from 'vuetify'
 import * as directives from 'vuetify/directives'
+import { VAvatar } from 'vuetify/components/'
 import { VCard } from 'vuetify/components/'
 import { VTabs } from 'vuetify/components/'
 import { VTab } from 'vuetify/components/'
@@ -39,6 +40,7 @@ import { VTable } from 'vuetify/components/'
 export default defineNuxtPlugin(nuxtApp => {
     const vuetify = createVuetify({
         components: {
+            VAvatar,
             VCard,
             VTabs,
             VTab,

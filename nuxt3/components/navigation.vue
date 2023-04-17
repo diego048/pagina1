@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-layout>        
-      <v-navigation-drawer v-model="drawer" app>
+      <v-navigation-drawer v-model="drawer" app v-if="false">
         <v-img
           class="mx-2"
           :src="p2"

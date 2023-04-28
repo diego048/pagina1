@@ -6,7 +6,7 @@ import smtplib
 
 
 app=Flask(__name__)
-CORS(app, origins=['http://localhost:8080', 'http://localhost:80','http://107.23.179.170', 'http://3.232.232.195/'])
+CORS(app, origins=['http://localhost:8080', 'http://localhost:80','http://107.23.179.170', 'http://3.232.232.195:8080'])
 
 @app.after_request
 def after_request(response):

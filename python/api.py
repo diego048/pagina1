@@ -50,8 +50,9 @@ def api_login():
             password = request.json.get("password")
 
             user = "logistic"
+            user1 = "Logistic"
 
-            if user == username:
+            if user == username or user1 == username:
                 if password == "l0g1c0rp":
                     return {
                         "success": True,
